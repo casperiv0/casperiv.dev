@@ -14,14 +14,14 @@
     "test-tsc": "npm run build:typed-css && tsc --noEmit"
   },
   "dependencies": {
-    "@casper124578/useful": "^1.4.1",
+    "@casper124578/useful": "^1.4.2",
     "@sendgrid/mail": "^7.5.0",
     "date-fns": "^2.25.0",
     "express-rate-limit": "^5.5.0",
     "faunadb": "^4.4.1",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^5.0.1",
     "mdx-bundler": "^6.0.2",
-    "next": "^12.0.0",
+    "next": "^12.0.2",
     "next-pwa": "^5.4.0",
     "next-sitemap": "^1.6.192",
     "nprogress": "^0.2.0",
