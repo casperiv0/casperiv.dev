@@ -5,7 +5,10 @@ import classNames from "clsx";
 
 export const Nav = () => {
   return (
-    <header className="flex items-center justify-center w-full h-20 px-5 bg-blue" id="nav">
+    <header
+      className="sticky top-0 flex items-center justify-center w-full px-5 h-15 bg-blue"
+      id="nav"
+    >
       <nav className="flex items-center justify-between w-full h-20 max-w-4xl">
         {/* <h1 className="text-2xl font-bold">
           <a href="/">

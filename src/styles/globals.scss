@@ -20,3 +20,16 @@ body {
     @apply text-lg;
   }
 }
+
+.animate-wave {
+  animation: wave 1s alternate linear infinite;
+}
+
+@keyframes wave {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}

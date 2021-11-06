@@ -3,6 +3,9 @@ import { Layout } from "components/Layout";
 import { getAllItems, getItemBySlug } from "lib/mdx";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Post } from "types/Post";
+import { BlogHeader } from "components/blog/BlogHeader";
+import { Markdown } from "components/blog/markdown/Markdown";
+import { BlogFooter } from "components/blog/BlogFooter";
 
 export default function BlogPost({ post }: { post: Post }) {
   return (
@@ -11,8 +14,12 @@ export default function BlogPost({ post }: { post: Post }) {
         <title>Blog - Casper Iversen</title>
       </Head>
 
-      <article>
-        <h1 className="text-3xl font-bold capitalize md:text-4xl">{post.title}</h1>
+      <article className="pb-5">
+        <BlogHeader post={post} />
+
+        <Markdown content={post.content} />
+
+        <BlogFooter post={post} />
       </article>
     </Layout>
   );

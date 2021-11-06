@@ -6,7 +6,7 @@ export const HeroSection = () => {
     <section className="flex flex-col justify-center mx-auto h-[40em]" id="top">
       <div>
         <h4 className="text-2xl sm: md:text-3xl mb-3 text-[#CDD6E2]">
-          <span aria-label="Waving" role="img">
+          <span className="inline-block animate-wave" aria-label="Waving" role="img">
             👋
           </span>{" "}
           Hello! I am

@@ -1,0 +1,87 @@
+.reactMarkdown {
+  margin-top: 1rem;
+
+  a {
+    @apply underline;
+  }
+
+  pre {
+    font-family: "CascadiaMono", "Courier New", monospace !important;
+    background: var(--dark) !important;
+    border-radius: 0.3rem;
+    overflow-x: auto;
+    position: relative;
+
+    code {
+      font-family: "CascadiaMono", "Courier New", monospace !important;
+      padding: 0;
+      background: none;
+
+      span {
+        font-family: "CascadiaMono", "Courier New", monospace !important;
+      }
+    }
+
+    &:hover button {
+      opacity: 1;
+    }
+  }
+
+  code {
+    padding: 0.1rem 0.5rem;
+    background: var(--dark);
+    border-radius: 0.3rem;
+  }
+
+  h4,
+  h3,
+  h2,
+  h1 {
+    @apply font-semibold;
+    scroll-margin-top: 1em;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+  }
+
+  h6,
+  h5,
+  h4,
+  h3,
+  h2,
+  h1 {
+    @apply w-full my-3 relative;
+
+    a {
+      position: absolute;
+      cursor: pointer;
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  p,
+  hr {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    line-height: 2rem;
+  }
+
+  li {
+    margin-bottom: 0.3rem;
+    margin-left: 1.5rem;
+    list-style-type: "- ";
+  }
+
+  summary {
+    cursor: pointer;
+    transition: 200ms;
+    margin-bottom: 0.5em;
+  }
+}

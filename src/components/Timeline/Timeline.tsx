@@ -14,7 +14,10 @@ export const Timeline = ({ timelineData }: { timelineData: TTimelineItem[] }) =>
         const items = timelineData.filter((v) => v.year === item);
 
         return (
-          <div className="py-5 first:pt-0 border-b-[1px] border-blue-1 last-of-type:border-b-0" key={item}>
+          <div
+            className="py-5 first:pt-0 border-b-[1px] border-blue-1 last-of-type:border-b-0"
+            key={item}
+          >
             <h3 className="mb-2 text-2xl font-semibold">{item}</h3>
 
             <ul>
