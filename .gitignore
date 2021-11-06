@@ -25,26 +25,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
 
 # vercel
 .vercel
-
-# ENV
-.env
-
-.vscode
-
-# remove service workers, will be present when running `npm run build`.
-public/*.js
-public/*.js.map
-public/sitemap.xml
-public/rss.xml
-
-# blog posts
-
-# will be public at the end of the year!
-2021-recap.mdx
+docker-compose.yml

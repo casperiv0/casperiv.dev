@@ -1,7 +1,12 @@
-const DATE_OF_BIRTH = "07/21/2005";
+const DATE_OF_BIRTH = "2005-07-21";
 
-export function getMyAge() {
-  return ((Date.now() - new Date(DATE_OF_BIRTH).getTime()) / (60 * 60 * 24 * 365.25 * 1000))
-    .toString()
-    .split(".")[0];
+export function calculateAge(withMagic: boolean = true) {
+  const date = new Date(DATE_OF_BIRTH).getTime();
+  const age = (Date.now() - date) / (60 * 60 * 24 * 365.25 * 1000);
+
+  if (withMagic) {
+    return age.toFixed(8);
+  }
+
+  return age.toString().split(".")[0];
 }

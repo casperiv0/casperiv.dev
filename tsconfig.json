@@ -2,14 +2,9 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -17,44 +12,31 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
-      "root": [
-        "."
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@sections/*": [
-        "./src/sections/*"
-      ],
-      "types/*": [
-        "./src/interfaces/*"
-      ],
-      "css/*": [
-        "./src/styles/*"
-      ],
-      "@icons/*": [
-        "./src/components/icons/*"
-      ],
-      "@lib/*": [
-        "./src/lib/*"
-      ],
-      "public/*": [
-        "./public/*"
-      ]
+      "lib/*": ["./src/lib/*"],
+      "styles/*": ["./src/styles/*"],
+      "components/*": ["./src/components/*"],
+      "types/*": ["./src/types/*"],
+      "data/*": ["./src/data/*"],
+      "sections/*": ["./src/sections/*"],
+      "utils/*": ["./src/utils/*"]
     },
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

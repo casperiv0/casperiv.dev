@@ -1,6 +1,0 @@
-/* eslint-disable */
-module.exports = {
-  siteUrl: "https://caspertheghost.me",
-  generateRobotsTxt: true, // (optional)
-  exclude: ["2021-recap"],
-};

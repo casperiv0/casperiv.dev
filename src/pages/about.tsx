@@ -1,108 +1,69 @@
-import { motion } from "framer-motion";
+import Head from "next/head";
 import Link from "next/link";
-import { Seo } from "@components/Seo";
-import { getMyAge } from "@lib/utils";
-import { LINKS } from ".";
-import styles from "css/about.module.scss";
-import mainStyles from "css/main.module.scss";
+import { Age } from "components/Age";
+import { Layout } from "components/Layout";
+import { GetStaticProps } from "next";
+import { TimelineItem } from "types/Timeline";
+import { Timeline } from "components/Timeline/Timeline";
 
-const animationProps = {
-  initial: { opacity: 0, translateY: 5 },
-  animate: { opacity: 1, translateY: 0 },
-};
-
-const Index = () => {
-  const age = getMyAge();
-
+export default function About({ timelineData }: { timelineData: TimelineItem[] }) {
   return (
-    <main className={mainStyles.main}>
-      <Seo title="About Me - Casper Iversen" />
+    <Layout>
+      <Head>
+        <title>About - Casper Iversen</title>
+      </Head>
 
-      <motion.h1 {...animationProps} style={{ marginBottom: "1rem" }}>
-        A bit more about me 👨‍💻
-      </motion.h1>
+      <section id="about">
+        <h1 className="text-3xl font-bold capitalize md:text-4xl">About Me</h1>
 
-      <motion.div
-        transition={{ duration: 0.2, delay: 0.1 }}
-        {...animationProps}
-        className={styles.aboutText}
-      >
-        <p>
-          Hello, I am Casper! {"I'm"} a {age} year old programmer and student based in Belgium. I
-          adore building accessible and fast code. {"I'm"} also a big fan of open-source, I
-          contribute to open-source as much as I can, I also have{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/dev-caspertheghost?tab=repositories"
-          >
-            many open-source projects
-          </a>{" "}
-          of my own.
-        </p>
-
-        <p style={{ marginTop: "0.5rem" }}>
-          I have been developing web applications, Discord bots and npm packages for about 2 years
-          and love it! {"I'm"} learning something new almost every day! I am currently focusing on
-          frontend web development. Specifically working with React.js, TypeScript, CSS, HTML and
-          much more!
-        </p>
-
-        <br />
-
-        <p>
-          I also like interacting with GitHub repositories to expand my knowledge about technologies
-          and web development in general.
-        </p>
-
-        <br />
-
-        <p>
-          When {"I'm"} not programming or in school, I enjoy to go mountain biking in my local town.
-          I also love skiing!
-        </p>
-
-        <br />
-
-        <em>
-          PS: If there is something that {"you'd"} like to know more about me, {"don't"} hesitate to{" "}
-          <Link href="/#contact">
-            <a>contact me</a>
-          </Link>
-          !
-        </em>
-
-        <div style={{ justifyContent: "start" }} className={mainStyles.btnContainer}>
-          {LINKS.map((v) => {
-            if (v.name === "Contact") {
-              v.href = "/#contact";
-            }
-
-            return v;
-          }).map((link, idx) => (
-            <motion.a
-              key={link.name}
-              initial={{
-                opacity: 0,
-                translateY: -10,
-              }}
-              animate={{
-                opacity: 1,
-                translateY: 0,
-              }}
-              transition={{ duration: 0.3, delay: 0.1 * idx }}
-              className="btn btn__light btn__icon"
-              href={link.href}
-              style={{ textDecoration: "none" }}
-            >
-              <link.Icon />
-              {link.name}
-            </motion.a>
-          ))}
+        <div className="max-w-3xl mt-5">
+          <p>
+            Hello, I am Casper! I'm a <Age /> year old programmer and student based in Belgium. I
+            adore building accessible and fast code. I'm also a big fan of open-source, I contribute
+            to open-source as much as I can, I also have many open-source projects of my own.
+          </p>
+          <p className="mt-5">
+            I have been developing web applications, Discord bots and npm packages for about 2 years
+            and love it! I'm learning something new almost every day! I am currently focusing on
+            frontend web development. Specifically working with React.js, TypeScript, CSS, HTML and
+            much more!
+          </p>
+          <p className="mt-5">
+            I also like interacting with GitHub repositories to expand my knowledge about
+            technologies and web development in general.
+          </p>
+          <p className="mt-5">
+            When I'm not programming or in school, I enjoy to go mountain biking in my local town. I
+            also love skiing!
+          </p>
+          <p className="mt-5 text-base italic">
+            PS: If there is something that you'd like to know more about me, don't hesitate to{" "}
+            <Link href="/#contact">
+              <a className="underline">contact me</a>
+            </Link>
+            !
+          </p>
         </div>
-      </motion.div>
-    </main>
-  );
-};
+      </section>
 
-export default Index;
+      <section className="mt-10" id="timeline">
+        <h1 className="text-3xl font-bold capitalize md:text-4xl">Timeline</h1>
+
+        <Timeline timelineData={timelineData} />
+      </section>
+    </Layout>
+  );
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  // get data from github
+  const timelineData = await (await import("../data/timeline")).timeline;
+
+  return {
+    props: {
+      timelineData,
+    },
+    // 1 week
+    revalidate: 604_800,
+  };
+};

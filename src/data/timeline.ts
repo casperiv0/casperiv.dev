@@ -2,27 +2,23 @@ import { TimelineItem } from "types/Timeline";
 
 export const timeline: TimelineItem[] = [
   {
-    date: "October 2021",
-    title: "SnailyCAD",
+    year: 2021,
+    title: "Created SnailyCADv4",
     text: "Re-creating SnailyCADv3 as SnailyCADv4 with tons of improvements and new features.",
-    full_date: "October 5, 2021",
     url: "https://github.com/SnailyCAD/snaily-cadv4",
+    date: "October 2021",
+    full_date: "October 5, 2021",
   },
   {
+    year: 2021,
     date: "September 2021",
     title: "new-tab",
     text: "Published my first Firefox addon",
     full_date: "September 13, 2021",
-    url: "https://ctgs.caspertheghost.me/new-tab",
+    url: "https://addons.mozilla.org/en-US/firefox/addon/new_tab1",
   },
   {
-    date: "September 2021",
-    title: "Polywork",
-    text: "Created a Polywork page. Make sure to follow me 😆!",
-    full_date: "September 7, 2021",
-    url: "https://p.caspertheghost.me",
-  },
-  {
+    year: 2021,
     date: "August 2021",
     title: "React Redux -> MobX",
     text: "Rewrote notey.app to use MobX instead of Redux. A lot of boilerplate code gone 👏!",
@@ -30,6 +26,7 @@ export const timeline: TimelineItem[] = [
     url: "https://notey.caspertheghost.me",
   },
   {
+    year: 2021,
     date: "August 2021",
     title: "JavaScript questions quiz",
     text: "Created a markdown parser that creates a JavaScript questions quiz to get better at JavaScript!",
@@ -37,6 +34,7 @@ export const timeline: TimelineItem[] = [
     url: "https://js-questions-quiz.vercel.app",
   },
   {
+    year: 2021,
     date: "August 2021",
     title: "Flag guesser",
     text: "Created a flag guessing game to learn the flags of countries.",
@@ -44,6 +42,7 @@ export const timeline: TimelineItem[] = [
     url: "https://flag-guesser.vercel.app",
   },
   {
+    year: 2021,
     date: "July 2021",
     title: "Q-Music player",
     text: "A website to listen to all Q-Music channels in one place with ease!",
@@ -51,12 +50,7 @@ export const timeline: TimelineItem[] = [
     url: "https://qmusic-fetcher.vercel.app",
   },
   {
-    date: "July 2021",
-    title: "Birthday",
-    text: "This day was my birthday! I had a good day.",
-    full_date: "July 21, 2021",
-  },
-  {
+    year: 2021,
     date: "June 2021",
     title: "FreeCodeCamp",
     text: "Started doing some more courses on FreeCodeCamp and got their Responsive Web Design Certificate!",
@@ -64,6 +58,7 @@ export const timeline: TimelineItem[] = [
     full_date: "June 28, 2021",
   },
   {
+    year: 2021,
     date: "June 2021",
     title: "home-inventory",
     text: "Created a project called 'home-inventory' to keep track of items in your home (food items, tech, medical supplies, etc.). Started this project to learn more and keep track of stuff in my house 😄.",
@@ -71,13 +66,7 @@ export const timeline: TimelineItem[] = [
     full_date: "June 8, 2021",
   },
   {
-    date: "May 2021",
-    title: "@casper124578/mysql.ts",
-    text: "Created yet another npm package called '@casper124578/mysql.ts'. A wrapper to interact with MySQL databases with ease",
-    url: "https://npm.im/@casper124578/mysql.ts",
-    full_date: "May 7, 2021",
-  },
-  {
+    year: 2021,
     date: "May 2021",
     title: "@casper124578/useful",
     text: "Created another npm package called '@casper124578/useful'. This package includes useful React hooks and functions",
@@ -85,26 +74,22 @@ export const timeline: TimelineItem[] = [
     full_date: "May 1, 2021",
   },
   {
+    year: 2021,
     date: "April 2021",
     title: "Pastebin clone",
     text: "Created a Pastebin clone using next.js, faunaDB, next-auth and next-api-decorators. Again, an amazing developer experience 💻",
     full_date: "April 25, 2021",
   },
   {
-    date: "April 2021",
-    title: "ctgs.ga",
-    text: "Created a simple URL shortener using Next.js, FaunaDB and tailwindCSS. Very fun and great developer experience 👨‍💻!",
-    url: "https://ctgs.ga",
-    full_date: "April 6, 2021",
-  },
-  {
+    year: 2021,
     date: "End March 2021",
     title: "notey.app",
-    text: "Rewritten my notes application with next.js and TypeScript. It's so fast and easy ⚡!",
+    text: "Rewritten my notes application with next.js and TypeScript. It's so fast ⚡!",
     url: "https://notey.caspertheghost.me",
     full_date: "March 30, 2021",
   },
   {
+    year: 2021,
     date: "End March 2021",
     title: "Blog",
     text: "Created my custom blog to post ✨special✨ things!",
@@ -112,6 +97,7 @@ export const timeline: TimelineItem[] = [
     full_date: "March 27, 2021",
   },
   {
+    year: 2021,
     date: "March 2021",
     title: "Discord clone",
     text: "Started working on a Discord clone using React, TypeScript and socket.io",
@@ -119,6 +105,7 @@ export const timeline: TimelineItem[] = [
     full_date: "March 5, 2021",
   },
   {
+    year: 2021,
     date: "February 2021",
     title: "pastebin-api",
     text: "Created a simple npm package to interact with the Pastebin API 💻",
@@ -126,13 +113,15 @@ export const timeline: TimelineItem[] = [
     full_date: "February 23, 2021",
   },
   {
+    year: 2021,
     date: "January 2021",
     title: "Zyndicate",
-    text: "Joined the Zyndicate team 🎉!",
+    text: "Joined the amazing team at Zyndicate 🎉!",
     url: "https://zyndicate.app",
     full_date: "January 1, 2021",
   },
   {
+    year: 2020,
     date: "November 2020",
     title: "GitHub Bio",
     text: "Created a simple application to update my GitHub bio with my WakaTime stats",
@@ -140,13 +129,15 @@ export const timeline: TimelineItem[] = [
     full_date: "November 28, 2020",
   },
   {
+    year: 2020,
     date: "October 2020",
     title: "Portfoliov3",
-    text: "Rewritten and redesigned my portfolio in NextJs and TypeScript",
+    text: "Rewritten and redesigned my portfolio in Next.js and TypeScript",
     url: "https://github.com/dev-caspertheghost/caspertheghost.me",
     full_date: "October 24, 2020",
   },
   {
+    year: 2020,
     date: "October 2020",
     title: "SnailyCADv3",
     text: "Rewriting my first project in TypeScript, making it more secure and better.",
@@ -154,12 +145,14 @@ export const timeline: TimelineItem[] = [
     full_date: "October 14, 2020",
   },
   {
+    year: 2020,
     date: "September 2020",
     title: "TypeScript",
     text: "Started learning TypeScript. I'm liking it and It's going great so far!",
     url: "https://www.typescriptlang.org/",
   },
   {
+    year: 2020,
     date: "August 2020",
     title: "Notey.app",
     text: "Working on another big project! Notes app to keep track of important things",
@@ -167,6 +160,7 @@ export const timeline: TimelineItem[] = [
     full_date: "August 16, 2020",
   },
   {
+    year: 2020,
     date: "July 2020",
     title: "GhostyBot",
     text: "Recreated my right Discord bot and made it even better, learned a lot from my mistakes.",
@@ -174,6 +168,7 @@ export const timeline: TimelineItem[] = [
     full_date: "July 20, 2020",
   },
   {
+    year: 2020,
     date: "July 2020",
     title: "React Timeline",
     text: "Created my first npm package! Create cool and good looking timelines with ease.",
@@ -181,29 +176,21 @@ export const timeline: TimelineItem[] = [
     full_date: "July 15, 2020",
   },
   {
-    date: "July 2020",
-    title: "FreeCodeCamp",
-    text: "Started to learn more about data structures and algorithms on, Fun but hard!",
-    url: "http://freecodecamp.com/",
-  },
-  {
+    year: 2020,
     date: "June 2020",
     title: "Sololearn",
     text: "Started learning the basics of JavaScript again. Was very helpful.",
     url: "https://www.sololearn.com/Certificate/1024-18951663/pdf/",
   },
   {
+    year: 2020,
     date: "March 2020",
     title: "Quarantine",
-    text: "Quarantine was pretty cool, had a lot of time to learn more about ReactJs and could work on a lot of projects!",
+    text: "Quarantine was kind of cool, had a lot of time to learn more about React.js and could work on a lot of projects!",
   },
   {
-    date: "End 2019 - Present",
-    title: "SnailyCAD",
-    text: "At the end of 2019 I started my first big project! SnailyCAD.",
-  },
-  {
-    date: "2018 - 2019",
+    year: 2018,
+    date: "2018",
     title: "Beginning!",
     text: "2018, '19 were the years I fully got into programming and computers",
   },
