@@ -20,7 +20,16 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
           <p>
             Hello, I am Casper! I'm a <Age /> year old programmer and student based in Belgium. I
             adore building accessible and fast code. I'm also a big fan of open-source, I contribute
-            to open-source as much as I can, I also have many open-source projects of my own.
+            to open-source as much as I can, I also have{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              href="https://github.com/dev-caspertheghost?tab=repositories"
+            >
+              many open-source projects
+            </a>{" "}
+            of my own.
           </p>
           <p className="mt-5">
             I have been developing web applications, Discord bots and npm packages for about 2 years

@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 body {

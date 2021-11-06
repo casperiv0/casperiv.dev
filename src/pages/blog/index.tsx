@@ -16,7 +16,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
 
       <ul className="flex flex-col mt-5">
         {posts.map((post) => (
-          <li className="my-3 first:mt-0" key={post.slug}>
+          <li className="my-3.5 first:mt-0" key={post.slug}>
             <Link href={`/blog/${post.slug}`}>
               <a>
                 <h3 className="text-xl font-semibold">{post.title}</h3>

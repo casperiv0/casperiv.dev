@@ -16,12 +16,12 @@ export const Nav = () => {
           </a>
         </h1> */}
 
-        <ul className="flex items-center h-full">
+        <ul className="flex items-center h-full space-x-1">
           <li>
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="#projects">Projects</Link>
+            <Link href="/#projects">Projects</Link>
           </li>
           <li>
             <Link href="/about">About</Link>
@@ -58,7 +58,7 @@ const Link = (props: JSX.IntrinsicElements["a"]) => {
       <a
         {...props}
         className={classNames(
-          { "bg-blue-1": isActive },
+          { "bg-blue-1 font-medium": isActive },
           "p-1.5 px-3 duration-200 transition-colors rounded-md hover:bg-blue-1",
         )}
       >

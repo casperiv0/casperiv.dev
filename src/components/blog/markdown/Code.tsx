@@ -28,7 +28,7 @@ export const MDCode = (props: Props) => {
   return !inline && match ? (
     <div>
       <Button
-        aria-aria-label={copied ? "Code was copied" : "Copy Code"}
+        aria-label={copied ? "Code was copied" : "Copy Code"}
         onClick={handleCopy}
         className="absolute z-20 transition-all opacity-0 top-1 right-1 focus:opacity-100"
       >
