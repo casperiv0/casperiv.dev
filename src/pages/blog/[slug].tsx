@@ -12,6 +12,7 @@ export default function BlogPost({ post }: { post: Post }) {
     <Layout>
       <Head>
         <title>Blog - Casper Iversen</title>
+        <link rel="preload" href="/fonts/CascadiaMono.woff2" as="font" type="font/woff2" />
       </Head>
 
       <article className="pb-5">

@@ -16,11 +16,11 @@ export default function Blog({ posts }: { posts: Post[] }) {
 
       <ul className="flex flex-col mt-5">
         {posts.map((post) => (
-          <li key={post.slug}>
+          <li className="my-3 first:mt-0" key={post.slug}>
             <Link href={`/blog/${post.slug}`}>
               <a>
-                <h3 className="text-2xl font-semibold">{post.title}</h3>
-                <p className="text-gray-300">{post.intro}</p>
+                <h3 className="text-xl font-semibold">{post.title}</h3>
+                <p className="mt-1 text-gray-300">{post.intro}</p>
               </a>
             </Link>
           </li>

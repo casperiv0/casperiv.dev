@@ -1,0 +1,84 @@
+---
+title: How to setup next-pwa with Next.js
+createdAt: August 27, 2021 9:00
+intro: How to setup next-pwa with Next.js in less than 5 minutes.
+---
+
+## Prerequisites
+
+Before we start, make sure that you already have a Next.js app with version 9 or higher.
+
+## Getting started
+
+To get started we will install the required [npm package](https://npm.im/next-pwa).
+
+```bash
+npm i next-pwa
+```
+
+If you already have a `next.config.js` file, you will need to wrap your configs with the `withNextPWA` function:
+
+```javascript:next.config.js
+const withNextPWA = require("next-pwa")
+
+module.exports = withNextPWA({
+  /*
+    ...
+    Rest of the config here
+    ...
+  */
+})
+```
+
+<Alert style={{ marginTop: "1rem" }} type="info">
+  Tip: You can create a `manifest.json` file in your `public` folder. This file will hold the rest
+  of your [PWA configuration](https://web.dev/add-manifest/).
+</Alert>
+
+## Configuring next-pwa
+
+We need to add a few more options in our Next.js config to properly setup next-pwa.
+We also need to disable next-pwa for `development` to avoid [this weird error](#weird-error).
+
+```javascript:next.config.js
+const withNextPWA = require("next-pwa")
+
+module.exports = withNextPWA({
+  /*
+    ...
+    Rest of the config here
+    ...
+  */
+  pwa: {
+    // disable for development.
+    disable: process.env.NODE_ENV === "development",
+    dest: "public"
+    /** View more options here: https://www.npmjs.com/package/next-pwa#available-options */
+  }
+})
+```
+
+## Usage
+
+When building your next app (`next build`). This will automatically pick up the next-pwa configuration and build the PWA too.
+Once it's done building, you should see 2 new files in your `public` folder created by next-pwa.
+
+<Alert style={{ margin: "1.5rem 0" }} type="info">
+  Tip: Add these files to a `.gitignore` to avoid conflicts when using version control.
+</Alert>
+
+## Weird Error
+
+If you're in `development` and run into the following issues:
+
+- Very slow page loads
+- Development server hanging
+- `pages is undefined` errors
+
+This can mean that there's a service worker registered. For some reason this can break the Next.js development server.
+To unregister this service worker, do the following steps below:
+
+1. Open your DevTools (<kbd>F12</kbd>)
+2. Find the `Application` tab
+3. Open the `Service Workers` tab in the sidebar
+4. Unregister all service workers

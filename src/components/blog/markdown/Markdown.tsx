@@ -6,12 +6,8 @@ import styles from "styles/blog.module.scss";
 const components = {
   a: dynamic(async () => (await import("./Link")).Link),
   code: dynamic(async () => (await import("./Code")).MDCode),
-  //   Image: dynamic(() => import("./Image").then((v) => v.MdImage), {
-  //     loading: () => <>Loading text..</>,
-  //   }),
-  //   Alert: dynamic(() => import("./Alert").then((v) => v.Alert), {
-  //     loading: () => <>Loading text..</>,
-  //   }),
+  Alert: dynamic(async () => (await import("./Alert")).Alert),
+  Image: dynamic(async () => (await import("next/image")).default),
 };
 
 interface Props {

@@ -1,0 +1,79 @@
+---
+title: Using NProgress with Next.js
+createdAt: September 8, 2021 17:00
+intro: How to add a simple loading bar to a Next.js app
+keywords: nextjs, nprogress, loading, nextjs loader
+---
+
+## Prerequisites
+
+- Next.js application with **version 11 or higher**
+
+## Getting started
+
+First we'll need to install the [`NProgress`](https://npm.im/nprogress) npm module
+
+```bash
+npm install nprogress
+```
+
+And the types
+
+```bash
+npm install --save-dev @types/nprogress
+```
+
+## Usage
+
+### Importing styles
+
+To use the module, open your `_app.tsx` file. If you do not have an app file,
+[checkout Next.js' docs](https://nextjs.org/docs/advanced-features/custom-app).
+
+Firstly we need import the required styles from nprogress.
+
+```tsx:pages/app.tsx
+import "nprogress/nprogress.css";
+
+const MyApp = () => {
+    return /* ... */
+}
+```
+
+### Router events
+
+We'll add a `useEffect` in our component and add 2 handlers to handle `routeChangeStart` and `routeChangeComplete`.
+[More info about router events](https://nextjs.org/docs/api-reference/next/router#routerevents).
+
+```tsx:pages/app.tsx
+import * as React from "react";
+import Router from "next/router";
+
+const MyApp = () => {
+  /* ... */
+  React.useEffect(() => {
+    const handleRouteState = () => NProgress.start();
+    const handleRouteDone = () => NProgress.done();
+
+    Router.events.on("routeChangeStart", handleRouteStart);
+    Router.events.on("routeChangeComplete", handleRouteDone);
+    Router.events.on("routeChangeError", handleRouteDone);
+
+    return () => {
+      // Make sure to remove the event handler on unmount!
+      Router.events.off("routeChangeStart", handleRouteStart);
+      Router.events.off("routeChangeComplete", handleRouteDone);
+      Router.events.off("routeChangeError", handleRouteDone);
+    };
+  }, []);
+  /* ... */
+};
+```
+
+## Done
+
+That's it! Start your dev server and see the changes!
+
+## Examples
+
+[View an example here](https://github.com/vercel/next.js/tree/canary/examples/with-loading)

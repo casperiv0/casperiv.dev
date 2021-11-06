@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "CascadiaMono";
+  src: url("/fonts/CascadiaMono.woff2");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
 .reactMarkdown {
   margin-top: 1rem;
 
@@ -6,11 +14,14 @@
   }
 
   pre {
+    --tw-bg-opacity: 1;
+
     font-family: "CascadiaMono", "Courier New", monospace !important;
-    background: var(--dark) !important;
+    background-color: rgba(36, 44, 56, var(--tw-bg-opacity)) !important;
     border-radius: 0.3rem;
     overflow-x: auto;
     position: relative;
+    padding: 0.25em 0.5em !important;
 
     code {
       font-family: "CascadiaMono", "Courier New", monospace !important;
@@ -28,9 +39,8 @@
   }
 
   code {
-    padding: 0.1rem 0.5rem;
-    background: var(--dark);
-    border-radius: 0.3rem;
+    font-family: "CascadiaMono", "Courier New", monospace !important;
+    @apply rounded-md p-1 px-1.5 bg-blue-1 font-light;
   }
 
   h4,
@@ -38,7 +48,7 @@
   h2,
   h1 {
     @apply font-semibold;
-    scroll-margin-top: 1em;
+    scroll-margin-top: 3em;
   }
 
   h2 {

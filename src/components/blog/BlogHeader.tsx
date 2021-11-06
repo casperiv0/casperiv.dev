@@ -14,7 +14,7 @@ export const BlogHeader = ({ post }: Props) => {
 
   return (
     <header className="pb-2 border-b-2 border-blue-1">
-      <h1 className="mb-3 text-3xl font-bold capitalize md:text-4xl">{post.title}</h1>
+      <h1 className="mb-3 text-3xl font-bold md:text-4xl">{post.title}</h1>
       <div className="flex gap-5">
         <p className="font-medium">{publishDateFull}</p>
         {post.readingTime ? (
