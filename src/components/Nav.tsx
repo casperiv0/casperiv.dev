@@ -24,6 +24,9 @@ export const Nav = () => {
             <Link href="/#projects">Projects</Link>
           </li>
           <li>
+            <Link href="/#contact">Contact</Link>
+          </li>
+          <li>
             <Link href="/about">About</Link>
           </li>
           <li>

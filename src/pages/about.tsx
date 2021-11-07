@@ -14,7 +14,7 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
       </Head>
 
       <section id="about">
-        <h1 className="text-3xl font-bold capitalize md:text-4xl">About Me</h1>
+        <h1 className="section-title">About Me</h1>
 
         <div className="max-w-3xl mt-5">
           <p>
@@ -56,7 +56,7 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
       </section>
 
       <section className="mt-10" id="timeline">
-        <h1 className="text-3xl font-bold capitalize md:text-4xl">Timeline</h1>
+        <h1 className="section-title">Timeline</h1>
 
         <Timeline timelineData={timelineData} />
       </section>

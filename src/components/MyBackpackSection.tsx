@@ -1,7 +1,7 @@
 export const MyBackpackSection = ({ myBackpack }: { myBackpack: [string, string[]][] }) => {
   return (
-    <section>
-      <h1 className="text-3xl font-bold capitalize md:text-4xl">My Backpack</h1>
+    <section id="skills">
+      <h1 className="section-title">My Backpack</h1>
 
       <p className="my-3.5 text-gray-300">
         You can find the list of my top skills below. I'm also open to learn more frontend related

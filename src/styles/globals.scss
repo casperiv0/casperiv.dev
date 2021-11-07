@@ -23,6 +23,12 @@ body {
   p {
     @apply text-lg;
   }
+
+  .section-title {
+    padding-top: 2.5em;
+    margin-top: -2.5em;
+    @apply text-3xl font-bold capitalize md:text-4xl;
+  }
 }
 
 .animate-wave {

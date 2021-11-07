@@ -3,7 +3,7 @@ import { Project } from "types/Project";
 export const FeaturedProjectsSection = ({ projects }: { projects: Project[] }) => {
   return (
     <section className="pb-5 mt-10" id="projects">
-      <h1 className="text-3xl font-bold capitalize md:text-4xl">Featured Projects</h1>
+      <h1 className="section-title">Featured Projects</h1>
 
       <ul className="grid grid-cols-1 gap-3 mt-5 md:grid-cols-2">
         {projects.map((project) => (
