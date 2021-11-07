@@ -96,7 +96,7 @@ export const ContactSection = () => {
               />
             </FormField>
 
-            <FormField id="message" label="Message">
+            <FormField className="mb-0" id="message" label="Message">
               <Textarea
                 value={values.message}
                 hasError={errors.message && touched.message}
@@ -111,7 +111,10 @@ export const ContactSection = () => {
               />
             </FormField>
 
-            <div className="flex justify-end">
+            <div className="flex items-start justify-between mt-2">
+              <a className="italic underline" href="mailto:casper.iversen2@gmail.com">
+                Send me an email directly
+              </a>
               <Button type="submit">Submit</Button>
             </div>
           </Form>

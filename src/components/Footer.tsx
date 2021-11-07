@@ -15,7 +15,7 @@ export const Footer = () => {
           </a>
         </p>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col md:flex-row md:gap-2">
           <a
             className="underline"
             target="_blank"

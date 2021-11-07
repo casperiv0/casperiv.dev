@@ -3,7 +3,7 @@ import { Link } from "./blog/markdown/Link";
 
 export const FeaturedProjectsSection = ({ projects }: { projects: Project[] }) => {
   return (
-    <section className="pb-5 mt-10" id="projects">
+    <section className="pb-5 mt-14" id="projects">
       <h1 className="section-title">Featured Projects</h1>
 
       <ul className="grid grid-cols-1 gap-3 mt-5 md:grid-cols-2">
