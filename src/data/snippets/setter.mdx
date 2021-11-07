@@ -1,0 +1,35 @@
+---
+title: React setter function
+intro: A simple function to update input state.
+createdAt: September 4, 2021
+---
+
+## Implementation
+
+```tsx:src/lib/setter.ts
+import type * as React from "react";
+
+type Set<T> = React.Dispatch<React.SetStateAction<T>>;
+type ChangeEvent<E> = React.ChangeEvent<E>;
+type Input = HTMLInputElement | HTMLTextAreaElement;
+
+export const setter =
+  <T, E extends Input = HTMLInputElement>(setX: Set<T>) =>
+  (e: ChangeEvent<E>) => {
+    const value = e.target.value;
+
+    setX(value as unknown as T);
+  };
+```
+
+## Usage
+
+```tsx
+import { setter } from "lib/setter";
+
+const Component = () => {
+  const [name, setName] = React.useState<string>("");
+
+  return <input id="name-input" value={name} onChange={setter(setName)} />;
+};
+```

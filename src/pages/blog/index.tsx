@@ -4,6 +4,7 @@ import { Layout } from "components/Layout";
 import { getAllItems } from "lib/mdx";
 import { GetStaticProps } from "next";
 import { Post } from "types/Post";
+import { generateRSSFeed } from "lib/rss";
 
 export default function Blog({ posts }: { posts: Post[] }) {
   return (
@@ -32,6 +33,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllItems<Post>("posts");
+  await generateRSSFeed();
 
   return {
     props: { posts },

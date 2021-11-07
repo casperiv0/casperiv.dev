@@ -27,7 +27,13 @@ yarn-error.log*
 # local env files
 .env*
 
-# vercel
-.vercel
-docker-compose.yml
 prisma/*.db
+.vscode
+
+# remove service workers, will be present when running `npm run build`.
+public/*.js
+public/*.js.map
+public/sitemap.xml
+public/rss.xml
+
+docker-compose.yml

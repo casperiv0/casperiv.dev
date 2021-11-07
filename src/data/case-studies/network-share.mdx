@@ -1,0 +1,53 @@
+---
+title: network share's case study
+createdAt: September 9, 2021 17:30
+intro: Learn about Network Share's ideas and technologies.
+---
+
+## Introduction
+
+[Network Share](https://github.com/dev-caspertheghost/network-share) is a web app to share files, images, videos,
+etc across the same network in realtime.
+
+**GitHub Repository:** [Open GitHub Repository](https://github.com/dev-caspertheghost/network-share)
+
+## Idea
+
+The idea for Network Share was to create a web application that one could drop files, images, videos, etc onto a "drop-zone"
+so it can be shared easily across the same network. It had to be very simple to use and had to be in realtime.
+
+## Future ideas
+
+I currently don't have any future ideas/plans for this project. It doesn't need much to function either way 😅!
+
+## Technologies
+
+Network Share is built with [Next.js](https://nextjs.org) for the client and [Express](https://expressjs.com) with [socket.io](https://socket.io) for the API.
+Express handles the file uploads since socket.io wasn't able to handle large file uploads unfortunately.
+
+For the API I am using an class based approach to handle socket events. This keeps the API organized and structured.
+
+## Features
+
+- Upload images, files, videos, etc in realtime
+- Easy to use
+- Simple UI
+
+## Full tech stack
+
+### Frontend
+
+- React.js
+- Next.js
+- socket.io
+
+### API
+
+- socket.io
+- expressjs
+
+### Other
+
+- ESLint
+- Prettier
+- TypeScript

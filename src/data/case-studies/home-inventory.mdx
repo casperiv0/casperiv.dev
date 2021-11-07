@@ -1,0 +1,81 @@
+---
+title: home-inventory case study
+createdAt: August 19, 2021
+intro: Learn about the ideas and technogolies used in home-inventory
+---
+
+## Introduction
+
+home-inventory is a web application to keep track of items in your house such as food items, medical supplies, tech, etc.
+
+**GitHub Repository:** [Open GitHub Repository](https://github.com/dev-caspertheghost/home-inventory)
+
+## Idea
+
+The main idea for home-inventory was to create a web app with an overview of what's in your house.
+The UI had to look modern and feel smooth. There had to be a dashboard to see a quick overview of what was low on quantity,
+was about to expire, how much was spend the last month, etc.
+There also had to be plenty of options to customize the product to its needs.
+Able to import and export products was also an important feature to add, this allows users to easily import/export products into new accounts or houses.
+
+The ability to add users to a house was also a must so they could manage products and view the dashboard.
+
+All of these ideas are pretty much fully implemented.
+
+## Future ideas
+
+I'm planning on adding image support so items can be easily identified by their image.
+Improvements to mobile responsiveness, notes field and user roles are also on the list.
+
+## Technologies
+
+home-inventory is built with [Next.js](https://nextjs.org) and [React.js](https://reactjs.org) on the frontend. The backend uses [expressjs](https://expressjs.com) and [prisma](https://prisma.io).
+
+### Frontend technogolies
+
+home-inventory uses [redux](https://redux.js.org/) for state management, I have pretty good experience in redux.
+Hence the reason I chose to use it again.
+I'm also using [sass (scss) modules](https://nextjs.org/docs/basic-features/built-in-css-support) to get a bit more experience in scss.
+Found a package that can generate TypeScript definition files for these scss modules: [typed-scss-modules](https://github.com/skovy/typed-scss-modules),
+100% recommended if you're using TypeScript and scss modules.
+
+### Backend technogolies
+
+First time using [Prisma](https://prisma.io) and postgress, I'm in love! Amazing developer experience.
+Using [yup](https://npm.im/yup) as user validation module,
+Created an [npm helper module](https://npm.im/@casper124578/utils) for yup so I can use it across my other projects.
+
+## Features
+
+- Manage products
+  - Set a name, price, quantity, category, expiration date and more.
+  - Select multiple products to delete, edit products
+- Create/edit categories to categorize products
+- Manage users
+  - Add users to a house
+  - Delete users from a house.
+- Great UI/UX
+- Privacy focused
+
+## Full tech stack
+
+### Frontend
+
+- React.js
+- Next.js
+- Redux
+- sass modules
+
+### API
+
+- expressjs
+- prismajs
+- postgress
+
+### Other
+
+- Docker
+- Husky
+- ESLint
+- Prettier
+- TypeScript

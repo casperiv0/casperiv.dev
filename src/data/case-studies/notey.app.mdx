@@ -1,0 +1,80 @@
+---
+title: Notey.app case study
+createdAt: August 18, 2021 21:00:00
+intro: Learn about Notey.app's ideas and technologies.
+---
+
+## Introduction
+
+[Notey.app](https://notey.caspertheghost.me) is a notes taking app created with simplicity in mind.
+
+**Live app:** [Open live app](https://notey.caspertheghost.me)
+
+**GitHub Repository:** [Open GitHub Repository](https://github.com/dev-caspertheghost/notey.app)
+
+## Idea
+
+The idea behind Notey.app was to create a simple and good looking notes taking web application. It had to be easy to create notes and categorize them,
+it also had to be responsive so it could be used as a [PWA](https://web.dev/pwa) on a mobile phone.
+
+All of these ideas are pretty much fully implemented.
+
+## Future ideas
+
+In the (near) future there's a few things that I think would be cool to learn and implement into Notey.app. Such as drag and drop,
+this would be very beneficial for categorizing notes and great to get experience of.
+
+## Technologies
+
+[Notey.app](https://notey.caspertheghost.me) is fully built with [Next.js](https://nextjs.org) and [React.js](https://reactjs.org).
+It uses [MobX](https://mobx.js.org) for state management and [next-api-decorators](https://github.com/storyofams/next-api-decorators) for API management.
+I chose for MobX as state management so I could learn more about MobX and not always use Redux in my projects 😅, it was a great learning experience!
+
+next-api-decorators allows me to use TypeScript decorators,
+it also allows me to use [expressjs](https://expressjs.com/) middlewares with ease which isn't really possible in such an easy way when using plain Next.js.
+
+```typescript
+import { Get, UseMiddleware createHandler } from "@storyofams/next-api-decorators";
+
+// Middleware for the entire handler!
+// cors and helmet now able to be used in Next.js!
+@UseMiddleware(Cors, Helmet)
+class MyAPIHandler {
+  @Get()
+  async getStuff() {
+    return db.doStuff();
+  }
+}
+
+export default createHandler(MyAPIHandler);
+```
+
+## Features
+
+- Create/edit notes
+- Create/edit categories to categorize notes
+- Markdown support within notes
+- Great UI/UX
+- Privacy focused
+
+## Full tech stack
+
+### Frontend
+
+- React.js
+- Next.js
+- MobX
+- styled-components
+
+### API
+
+- next-api-decorators
+- bcryptjs
+- marked, dompurify and jsdom
+- yup
+
+### Other
+
+- ESLint
+- Prettier
+- TypeScript

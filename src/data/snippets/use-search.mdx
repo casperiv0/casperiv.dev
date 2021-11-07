@@ -1,0 +1,67 @@
+---
+title: useSearch React hook
+intro: easily search through an array with this hook.
+createdAt: April 17, 2021
+updatedAt: August 20, 2021
+keywords: use-search, search arrays, useSearch, react hooks
+---
+
+## The hook
+
+easily search through an array with this hook. With great TypeScript support.
+
+```tsx:src/hooks/useSearch.ts
+import * as React from "react";
+
+export function useSearch<T = object>(key: keyof T, items: T[]) {
+  const [search, setSearch] = React.useState("");
+  const [filtered, setFiltered] = React.useState<T[]>(items);
+
+  // if the 'items' change, make sure we update our state.
+  React.useEffect(() => {
+    setFiltered(items);
+  }, [items]);
+
+  function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.target.value;
+    setSearch(value);
+
+    // if there's no hits found, set filtered back to all items
+    if (value.length <= 0) {
+      setFiltered(items);
+
+      // else, search on the provided 'key'
+    } else {
+      setFiltered(
+        items.filter((v) =>
+          (v[key] as unknown as string).toString().toLowerCase().includes(value.toLowerCase()),
+        ),
+      );
+    }
+  }
+
+  return {
+    search,
+    onChange,
+    filtered,
+  };
+}
+```
+
+## Example
+
+[See an example here 🚀](https://codesandbox.io/s/use-search-hook-2o2q2)
+
+## npm/yarn
+
+You can now also use this hook via npm/yarn by installing [my npm package](https://npm.im/@casper124578/useful):
+
+```bash
+npm install @casper124578/useful
+```
+
+Later in your project
+
+```tsx
+import { useSearch } from "@casper124578/useful/hooks/useSearch";
+```

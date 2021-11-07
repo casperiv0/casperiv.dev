@@ -1,0 +1,51 @@
+---
+title: setCookie function
+intro: Set a cookie header in a Next.js API.
+createdAt: September 4, 2021
+---
+
+## Implementation
+
+```typescript:src/lib/setCookie.ts
+import { serialize, CookieSerializeOptions } from "cookie";
+import { NextApiResponse } from "next";
+
+interface CookieOptions {
+  res: NextApiResponse;
+  name: string;
+  value: unknown;
+  /** expires in ms */
+  expires: number;
+}
+
+export function setCookie(opts: CookieOptions) {
+  const stringValue =
+    typeof opts.value === "object" ? `j:${JSON.stringify(opts.value)}` : String(opts.value);
+
+  const options: CookieSerializeOptions = {
+    expires: new Date(Date.now() + opts.expires),
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+    sameSite: "strict",
+  };
+
+  opts.res.setHeader("Set-Cookie", serialize(opts.name, String(stringValue), options));
+}
+```
+
+## Usage
+
+```typescript
+import { setCookie } from "lib/setCookie";
+
+export default async function handler(req, res) {
+  /* ... */
+
+  const myValue = "super-secret-jwt-token-ha";
+  // expire after 3 hours
+  setCookie({ res, name: "my-token", expires: 60 * 60 * 1000 * 3, value: myValue });
+
+  /* ... */
+}
+```

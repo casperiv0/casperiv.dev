@@ -1,0 +1,21 @@
+---
+title: classes
+intro: Add multiple classes in React with ease.
+createdAt: September 4, 2021
+---
+
+## Implementation
+
+Add multiple classes that can also be type `boolean`, `null` and `undefined`.
+
+```tsx:src/util/classes.ts
+export function classes(...arr: (string | boolean | null | undefined)[]): string {
+  return arr.join(" ");
+}
+```
+
+## Usage
+
+```tsx
+<div className={classes("myClass", isTrue && "anotherClass")}>Hello world!</div>
+```
