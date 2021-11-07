@@ -5,42 +5,42 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { Post } from "types/Post";
 import { Article } from "components/blog/Article";
 
-export default function BlogPost({ post }: { post: Post }) {
+export default function BlogPost({ caseStudy }: { caseStudy: Post }) {
   return (
     <Layout>
       <Head>
-        <title>{post.title} - Casper Iversen</title>
+        <title>{caseStudy.title} - Casper Iversen</title>
         <link rel="preload" href="/fonts/CascadiaMono.woff2" as="font" type="font/woff2" />
       </Head>
 
-      <Article article={post} />
+      <Article article={caseStudy} />
     </Layout>
   );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getAllItems<Post>("posts", true);
+  const caseStudies = await getAllItems<Post>("case-studies", true);
 
   return {
     fallback: false,
-    paths: posts.map((post) => ({
+    paths: caseStudies.map((snippet) => ({
       params: {
-        slug: post.slug,
+        slug: snippet.slug,
       },
     })),
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = await getItemBySlug<Post>(params?.slug as string, "posts");
+  const caseStudy = await getItemBySlug<Post>(params?.slug as string, "case-studies");
 
-  if (!post) {
+  if (!caseStudy) {
     return {
       notFound: true,
     };
   }
 
   return {
-    props: { post },
+    props: { caseStudy },
   };
 };

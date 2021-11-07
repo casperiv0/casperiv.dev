@@ -6,25 +6,25 @@ import { Post } from "types/Post";
 import { generateRSSFeed } from "lib/rss";
 import { ArticlesList } from "components/blog/ArticlesList";
 
-export default function Blog({ posts }: { posts: Post[] }) {
+export default function CodeSnippets({ snippets }: { snippets: Post[] }) {
   return (
     <Layout>
       <Head>
-        <title>Blog - Casper Iversen</title>
+        <title>Code snippets - Casper Iversen</title>
       </Head>
 
-      <h1 className="text-3xl font-bold capitalize md:text-4xl">Blog Posts</h1>
+      <h1 className="section-title">Code Snippets</h1>
 
-      <ArticlesList articles={posts} type="blog" />
+      <ArticlesList articles={snippets} type="snippets" />
     </Layout>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllItems<Post>("posts");
+  const snippets = await getAllItems<Post>("snippets");
   await generateRSSFeed();
 
   return {
-    props: { posts },
+    props: { snippets },
   };
 };

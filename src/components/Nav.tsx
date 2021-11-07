@@ -32,6 +32,9 @@ export const Nav = () => {
           <li>
             <Link href="/blog">Blog</Link>
           </li>
+          <li>
+            <Link href="/snippets">Code Snippets</Link>
+          </li>
         </ul>
 
         <ul className="flex items-center h-full space-x-3">
