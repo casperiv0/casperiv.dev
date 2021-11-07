@@ -48,6 +48,7 @@ export const ContactSection = () => {
   async function handleValidate(values: typeof initialValues) {
     const { errors } = await schema.validate(values, { abortEarly: false }).catch((e) => e);
 
+    // eslint-disable-next-line @typescript-eslint/ban-types
     return errors?.reduce((ac: {}, v: string) => ({ ...ac, [v.split(" ")[0]!]: v }), {}) ?? {};
   }
 

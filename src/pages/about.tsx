@@ -18,9 +18,9 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
 
         <div className="max-w-3xl mt-5">
           <p>
-            Hello, I am Casper! I'm a <Age /> year old programmer and student based in Belgium. I
-            adore building accessible and fast code. I'm also a big fan of open-source, I contribute
-            to open-source as much as I can, I also have{" "}
+            Hello, I am Casper! {"I'm"} a <Age /> year old programmer and student based in Belgium.
+            I adore building accessible and fast code. {"I'm"} also a big fan of open-source, I
+            contribute to open-source as much as I can, I also have{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
           </p>
           <p className="mt-5">
             I have been developing web applications, Discord bots and npm packages for about 2 years
-            and love it! I'm learning something new almost every day! I am currently focusing on
+            and love it! {"I'm"} learning something new almost every day! I am currently focusing on
             frontend web development. Specifically working with React.js, TypeScript, CSS, HTML and
             much more!
           </p>
@@ -42,11 +42,12 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
             technologies and web development in general.
           </p>
           <p className="mt-5">
-            When I'm not programming or in school, I enjoy to go mountain biking in my local town. I
-            also love skiing!
+            When {"I'm"} not programming or in school, I enjoy to go mountain biking in my local
+            town. I also love skiing!
           </p>
           <p className="mt-5 text-base italic">
-            PS: If there is something that you'd like to know more about me, don't hesitate to{" "}
+            PS: If there is something that {"you'd"} like to know more about me, {"don't"} hesitate
+            to{" "}
             <Link href="/#contact">
               <a className="underline">contact me</a>
             </Link>

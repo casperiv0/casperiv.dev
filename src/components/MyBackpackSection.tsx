@@ -4,8 +4,8 @@ export const MyBackpackSection = ({ myBackpack }: { myBackpack: [string, string[
       <h1 className="section-title">My Backpack</h1>
 
       <p className="my-3.5 text-gray-300">
-        You can find the list of my top skills below. I'm also open to learn more frontend related
-        frameworks, libraries, languages, etc!
+        You can find the list of my top skills below. {"I'm"} also open to learn more frontend
+        related frameworks, libraries, languages, etc!
       </p>
 
       <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 md:grid-cols-3">

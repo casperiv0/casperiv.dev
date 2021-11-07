@@ -6,17 +6,19 @@ export function useAge() {
   const ref = React.useRef<HTMLSpanElement>(null);
 
   React.useEffect(() => {
+    const currentRef = ref.current;
+
     const handler = () => {
       setWithMagic((v) => !v);
     };
 
-    if (ref.current) {
-      ref.current.addEventListener("click", handler);
+    if (currentRef) {
+      currentRef.addEventListener("click", handler);
     }
 
     return () => {
-      if (ref.current) {
-        ref.current.removeEventListener("click", handler);
+      if (currentRef) {
+        currentRef.removeEventListener("click", handler);
       }
     };
   }, []);
