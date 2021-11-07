@@ -4,12 +4,20 @@ import { getAllItems, getItemBySlug } from "lib/mdx";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Post } from "types/Post";
 import { Article } from "components/blog/Article";
+import { Seo } from "components/Seo";
 
 export default function BlogPost({ snippet }: { snippet: Post }) {
   return (
     <Layout>
+      <Seo
+        title={`${snippet.title} - Casper Iversen`}
+        description={snippet.intro ?? undefined}
+        keywords={["code snippets", "snippets casper iversen", ...(snippet.keywords ?? [])]}
+        url={`https://caspertheghost.me/snippets/${snippet.slug}`}
+        date={snippet.createdAt}
+      />
+
       <Head>
-        <title>{snippet.title} - Casper Iversen</title>
         <link rel="preload" href="/fonts/CascadiaMono.woff2" as="font" type="font/woff2" />
       </Head>
 

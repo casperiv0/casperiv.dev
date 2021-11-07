@@ -37,3 +37,4 @@ public/sitemap.xml
 public/rss.xml
 
 docker-compose.yml
+tsconfig.tsbuildinfo

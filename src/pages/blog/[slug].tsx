@@ -4,12 +4,20 @@ import { getAllItems, getItemBySlug } from "lib/mdx";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Post } from "types/Post";
 import { Article } from "components/blog/Article";
+import { Seo } from "components/Seo";
 
 export default function BlogPost({ post }: { post: Post }) {
   return (
     <Layout>
+      <Seo
+        title={`${post.title} - Casper Iversen`}
+        description={post.intro ?? undefined}
+        keywords={["blog", "blog casper iversen", ...(post.keywords ?? [])]}
+        url={`https://caspertheghost.me/blog/${post.slug}`}
+        date={post.createdAt}
+      />
+
       <Head>
-        <title>{post.title} - Casper Iversen</title>
         <link rel="preload" href="/fonts/CascadiaMono.woff2" as="font" type="font/woff2" />
       </Head>
 

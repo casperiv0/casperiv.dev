@@ -1,17 +1,15 @@
-import Head from "next/head";
 import Link from "next/link";
 import { Age } from "components/Age";
 import { Layout } from "components/Layout";
 import { GetStaticProps } from "next";
 import { TimelineItem } from "types/Timeline";
 import { Timeline } from "components/Timeline/Timeline";
+import { Seo } from "components/Seo";
 
 export default function About({ timelineData }: { timelineData: TimelineItem[] }) {
   return (
     <Layout>
-      <Head>
-        <title>About - Casper Iversen</title>
-      </Head>
+      <Seo title="About - Casper Iversen" />
 
       <section id="about">
         <h1 className="section-title">About Me</h1>

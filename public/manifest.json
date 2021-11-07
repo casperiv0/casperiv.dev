@@ -1,0 +1,26 @@
+{
+  "short_name": "caspertheghost.me",
+  "name": "caspertheghost.me",
+  "description": "Casper Iversen - A Frontend Web Developer",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#161b22",
+  "background_color": "#161b22",
+  "icons": [
+    {
+      "src": "/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
