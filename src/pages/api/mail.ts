@@ -1,7 +1,23 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import mail from "@sendgrid/mail";
+import rateLimit from "express-rate-limit";
 
-// todo: rate-limits
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 2,
+});
+
+export function middleWare(req: NextApiRequest, res: NextApiResponse, fn: any) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result: any) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+
+      return resolve(result);
+    });
+  });
+}
 
 mail.setApiKey(process.env.MAIL_API_KEY!);
 
@@ -10,7 +26,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).send("Method Not Allowed");
   }
 
+  await middleWare(req, res, limiter);
+
   const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+
+  if (!["email", "name", "message"].every((k) => body[k])) {
+    return res.status(500).send({ error: "email, name and message are required." });
+  }
 
   const msg = {
     to: [process.env.MAIL_CC_EMAIL!, { name: body.name, email: body.email }],

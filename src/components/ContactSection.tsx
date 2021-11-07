@@ -1,5 +1,6 @@
+import * as React from "react";
 import * as yup from "yup";
-import { Form, Formik, ErrorMessage } from "formik";
+import { Form, Formik, ErrorMessage, FormikHelpers } from "formik";
 import { Button } from "./Button";
 import { FormField } from "./form/Field";
 import { Input } from "./form/Input";
@@ -18,16 +19,30 @@ const schema = yup.object().shape({
 });
 
 export const ContactSection = () => {
-  async function onSubmit(data: typeof initialValues) {
-    console.log({ data });
+  const [message, setMessage] = React.useState<string | null>(null);
 
-    await fetch("/api/mail", {
+  async function onSubmit(
+    data: typeof initialValues,
+    helpers: FormikHelpers<typeof initialValues>,
+  ) {
+    const res = await fetch("/api/mail", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
         "content-type": "application/json",
       },
     });
+
+    if (res.ok) {
+      setMessage("Successfully sent message! You should get an email with a confirmation.");
+      helpers.resetForm();
+    } else {
+      if (res.status === 429) {
+        setMessage("Woah! You're moving to fast. Please try again in several minutes.");
+      } else {
+        setMessage("Could not sent the email. Please try again later.");
+      }
+    }
   }
 
   async function handleValidate(values: typeof initialValues) {
@@ -46,10 +61,13 @@ export const ContactSection = () => {
         onSubmit={onSubmit}
         initialValues={initialValues}
       >
-        {({ handleSubmit, handleChange, errors, touched }) => (
+        {({ handleSubmit, handleChange, errors, values, touched }) => (
           <Form className="mt-3" onSubmit={handleSubmit}>
+            {message ? <p className="p-2 px-3 mb-3 rounded-md bg-blue-2">{message}</p> : null}
+
             <FormField id="name" label="Name">
               <Input
+                value={values.name}
                 hasError={errors.name && touched.name}
                 name="name"
                 onChange={handleChange}
@@ -64,6 +82,7 @@ export const ContactSection = () => {
 
             <FormField id="email" label="Email">
               <Input
+                value={values.email}
                 hasError={errors.email && touched.email}
                 name="email"
                 onChange={handleChange}
@@ -78,6 +97,7 @@ export const ContactSection = () => {
 
             <FormField id="message" label="Message">
               <Textarea
+                value={values.message}
                 hasError={errors.message && touched.message}
                 name="message"
                 onChange={handleChange}
