@@ -1,3 +1,4 @@
+import { Button } from "components/Button";
 import * as React from "react";
 import { TimelineItem as TTimelineItem } from "types/Timeline";
 import { TimelineItem } from "./TimelineItem";
@@ -29,7 +30,9 @@ export const Timeline = ({ timelineData }: { timelineData: TTimelineItem[] }) =>
         );
       })}
 
-      <button onClick={() => setShowAll((v) => !v)}>{showAll ? "Show less" : "Show more"}</button>
+      <Button className="mt-5 mx-auto w-[max-content]" onClick={() => setShowAll((v) => !v)}>
+        {showAll ? "Show less" : "Show more"}
+      </Button>
     </div>
   );
 };
