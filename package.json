@@ -37,7 +37,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@casper124578/eslint-config": "^1.0.0",
+    "@casper124578/eslint-config": "^2.1.0",
     "@casper124578/eslint-config-next": "^1.0.0",
     "@casper124578/eslint-config-react": "^0.1.2",
     "@types/express-rate-limit": "^5.1.3",
