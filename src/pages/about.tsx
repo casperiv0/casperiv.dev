@@ -19,7 +19,7 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
         <div className="max-w-3xl mt-5">
           <p>
             Hello, I am Casper! {"I'm"} a <Age withColor /> year old programmer and student{" "}
-            <span className="bg-gradient-to-tr px-1.5 py-0.5 rounded-md from-[#1150d4] to-[#a245fc]">
+            <span className="bg-gradient-to-tr px-1.5 py-0.5 rounded-md from-[#1150d4] to-[#a245fc] text-white dark:text-current">
               based in Belgium
             </span>
             . I adore building accessible and fast code. {"I'm"} also a big fan of open-source, I
@@ -27,7 +27,7 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
             <a
               target="_blank"
               rel="noopener noreferrer"
-              className="underline"
+              className="underline decoration-2"
               href="https://github.com/dev-caspertheghost?tab=repositories"
             >
               many open-source projects
@@ -36,7 +36,7 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
           </p>
           <p className="mt-5">
             I have been developing web applications, Discord bots and npm packages for{" "}
-            <span className="bg-gradient-to-tr px-1.5 py-0.5 rounded-md from-[#1150d4] to-[#a245fc]">
+            <span className="bg-gradient-to-tr px-1.5 py-0.5 rounded-md from-[#1150d4] to-[#a245fc] text-white dark:text-current">
               {formatDistanceToNow(started)}
             </span>{" "}
             and love it! {"I'm"} learning something new almost every day! I am currently focusing on

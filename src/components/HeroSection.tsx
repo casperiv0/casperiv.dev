@@ -9,7 +9,7 @@ export const HeroSection = () => {
   return (
     <section className="flex flex-col justify-center mx-auto h-[40em]" id="top">
       <div>
-        <h4 className="text-2xl sm: md:text-3xl mb-3 text-[#CDD6E2]">
+        <h4 className="text-2xl sm: md:text-3xl mb-3 text-neutral-600 dark:text-[#CDD6E2]">
           <span className="inline-block animate-wave" aria-label="Waving" role="img">
             👋
           </span>{" "}
@@ -23,7 +23,7 @@ export const HeroSection = () => {
         </h2>
       </div>
 
-      <p className="max-w-3xl mt-8 text-gray-300 md:text-xl">
+      <p className="max-w-3xl mt-8 text-neutral-700 dark:text-gray-300 md:text-xl">
         I am a <Age /> year old programmer and student based in Belgium. {"I'm"} a self taught
         developer and I have been programming for {formatDistanceToNow(started)} and still learning
         new technologies every day, mostly focusing on frontend related technologies.{" "}

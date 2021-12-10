@@ -16,7 +16,7 @@ export const Timeline = ({ timelineData }: { timelineData: TTimelineItem[] }) =>
 
         return (
           <div
-            className="py-5 first:pt-0 border-b-[1px] border-blue-1 last-of-type:border-b-0"
+            className="py-5 first:pt-0 border-b-[1px] border-neutral-800 dark:border-blue-1 last-of-type:border-b-0"
             key={item}
           >
             <h3 className="mb-2 text-2xl font-semibold">{item}</h3>

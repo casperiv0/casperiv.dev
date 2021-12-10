@@ -6,10 +6,10 @@ interface Props {
 
 export const TimelineItem = ({ item }: Props) => {
   return (
-    <li className="my-5">
-      <h5 className="text-lg font-medium">
+    <li className="my-5 first-of-type:mt-0">
+      <h5 className="text-xl font-medium text-neutral-800 dark:text-gray-200">
         {item.tag ? (
-          <span className="mr-2 px-1.5 p-0.5 text-base lowercase rounded-md bg-gradient-to-tr from-[#1150d4] to-[#a245fc]">
+          <span className="mr-2 px-1.5 p-0.5 text-base lowercase rounded-md bg-gradient-to-tr from-[#1150d4] to-[#a245fc] text-white dark:text-black">
             {item.tag}
           </span>
         ) : null}
@@ -23,7 +23,7 @@ export const TimelineItem = ({ item }: Props) => {
         )}
       </h5>
 
-      <p className="mt-1 text-base text-gray-300">{item.text}</p>
+      <p className="mt-1 text-lg text-neutral-700 dark:text-gray-300">{item.text}</p>
     </li>
   );
 };

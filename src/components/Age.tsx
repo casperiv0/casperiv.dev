@@ -13,7 +13,8 @@ export const Age = ({ withColor }: Props) => {
   return (
     <button
       className={classNames("inline-block cursor-pointer", {
-        "bg-gradient-to-tr px-1.5 py-0.5 rounded-md from-[#1150d4] to-[#a245fc]": withColor,
+        "bg-gradient-to-tr px-1.5 py-0.5 rounded-md from-[#1150d4] to-[#a245fc] text-white dark:text-current":
+          withColor,
       })}
       ref={ageRef}
     >

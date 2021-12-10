@@ -23,13 +23,13 @@ export const BlogHeader = ({ post }: Props) => {
         <p className="font-medium min-w-max">{publishDateFull}</p>
         {post.readingTime ? (
           <p className="flex items-center gap-2 min-w-[120px]">
-            <Clock aria-labelledby={readTimeId} className="text-gray-400" />{" "}
+            <Clock aria-labelledby={readTimeId} className="text-neutral-500 dark:text-gray-400" />{" "}
             <span id={readTimeId}>{post.readingTime}</span>
           </p>
         ) : null}
 
         <p className="flex items-center gap-2 min-w-[100px]">
-          <Eye aria-labelledby={viewsId} className="text-gray-400" />{" "}
+          <Eye aria-labelledby={viewsId} className="text-neutral-500 dark:text-gray-400" />{" "}
           {views ? Intl.NumberFormat().format(views) : "—"} <span id={viewsId}>{viewsText}</span>
         </p>
       </div>

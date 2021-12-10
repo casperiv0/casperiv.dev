@@ -12,6 +12,10 @@ body {
 }
 
 body {
+  @apply bg-gray-50 text-neutral-900 min-h-screen;
+}
+
+body.dark {
   @apply bg-blue text-white min-h-screen;
 }
 

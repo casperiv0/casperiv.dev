@@ -48,6 +48,10 @@ export function Nav() {
   const { styles, hasActiveItem, handleMouseLeave, handleMouseOver, findActiveElement, setHover } =
     useActiveNavItem({ wrapperRef, isDisabled: menuOpen });
 
+  function handleThemeClick() {
+    document.body.classList.toggle("dark");
+  }
+
   React.useEffect(() => {
     setHover(false);
   }, [router]); // eslint-disable-line
@@ -70,7 +74,7 @@ export function Nav() {
 
   return (
     <header
-      className="sticky top-0 z-50 flex items-center justify-center w-full px-5 h-15 bg-blue"
+      className="sticky top-0 z-50 flex items-center justify-center w-full px-5 h-15 bg-gray-50 dark:bg-blue"
       id="nav"
     >
       <nav className="flex items-center justify-between w-full h-20 max-w-4xl">
@@ -88,7 +92,7 @@ export function Nav() {
           {menuOpen ? null : (
             <div
               style={styles}
-              className="absolute bg-blue-2/70 p-1.5 px-3 duration-200 rounded-md shadow-sm top-1/2"
+              className="absolute bg-gray-300 dark:bg-blue-2/70 p-1.5 px-3 duration-200 rounded-md shadow-sm top-1/2"
             />
           )}
 
@@ -128,6 +132,9 @@ export function Nav() {
             <a id={twitterId} aria-label="Twitter profile" href="https://twitter.com/casper124578">
               <Twitter aria-labelledby={twitterId} width={21} height={21} />
             </a>
+          </li>
+          <li>
+            <button onClick={handleThemeClick}>Theme</button>
           </li>
         </ul>
 
