@@ -53,7 +53,7 @@ export function useActiveNavItem({ wrapperRef, isDisabled }: Options) {
       const pathname = ["/blog/[slug]", "/snippets/[slug]"].includes(router.pathname)
         ? router.pathname.replace("/[slug]", "")
         : router.pathname;
-      const hash = window.location.hash;
+      const hash = pathname === "/" ? window.location.hash : "";
       const href = `${pathname}${hash}`;
 
       const child = [...children].find((v) => v.dataset.href === href) ?? [...children][0];

@@ -6,6 +6,7 @@ import classNames from "clsx";
 import { useViewport } from "lib/useViewport";
 import { useSSRSafeId } from "@react-aria/ssr";
 import { useActiveNavItem } from "lib/useActiveNavItem";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const links = [
   {
@@ -47,10 +48,6 @@ export function Nav() {
 
   const { styles, hasActiveItem, handleMouseLeave, handleMouseOver, findActiveElement, setHover } =
     useActiveNavItem({ wrapperRef, isDisabled: menuOpen });
-
-  function handleThemeClick() {
-    document.body.classList.toggle("dark");
-  }
 
   React.useEffect(() => {
     setHover(false);
@@ -134,7 +131,7 @@ export function Nav() {
             </a>
           </li>
           <li>
-            <button onClick={handleThemeClick}>Theme</button>
+            <ThemeSwitcher />
           </li>
         </ul>
 
