@@ -1,4 +1,4 @@
-import { useAge } from "lib/useAge";
+import { useAge } from "lib/hooks/useAge";
 import { calculateAge } from "lib/utils";
 import classNames from "clsx";
 
