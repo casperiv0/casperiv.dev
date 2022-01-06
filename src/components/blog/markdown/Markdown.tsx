@@ -5,7 +5,6 @@ import styles from "styles/blog.module.scss";
 import { Link } from "./Link";
 import { MDCode } from "./Code";
 import { Info } from "./Info";
-import { Alert } from "./Alert";
 import Image from "next/image";
 
 // importing this with next/dynamic will have some flickers..
@@ -13,7 +12,6 @@ const components = {
   a: Link,
   code: MDCode,
   Info,
-  Alert,
   Image,
 };
 
