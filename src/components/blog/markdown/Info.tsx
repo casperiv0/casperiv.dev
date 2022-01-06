@@ -22,7 +22,9 @@ export function Info({ children, title, color, ...rest }: Props) {
             fontSize: "1.35rem",
             lineHeight: "1.75rem",
             margin: "10px 0",
+            fontWeight: 700,
           }}
+          className="dark:text-gray-100  text-neutral-900"
         >
           {title}
         </h1>

@@ -7,7 +7,7 @@ export const Timeline = ({ timelineData }: { timelineData: TTimelineItem[] }) =>
   const [showAll, setShowAll] = React.useState(false);
 
   const yearsArr = [...new Set([...timelineData.map((v) => v.year)])];
-  const years = showAll ? yearsArr : [yearsArr[0]!];
+  const years = showAll ? yearsArr : [...yearsArr].slice(0, 2);
 
   return (
     <div className="flex flex-col pb-8 mt-3">

@@ -13,6 +13,7 @@ module.exports = {
       screens: {
         xs: "400px",
       },
+      // thanks to https://github.com/leerob/leerob.io/blob/main/tailwind.config.js
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -42,7 +43,8 @@ module.exports = {
           css: {
             color: theme("colors.gray.300"),
             code: {
-              backgroundColor: "rgb(36 44 56 / 0.6)",
+              backgroundColor: "rgb(36 44 56)",
+              color: theme("colors.gray.200"),
             },
             a: {
               color: theme("colors.gray.200"),

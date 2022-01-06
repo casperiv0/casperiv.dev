@@ -2,6 +2,19 @@ import { TimelineItem } from "types/Timeline";
 
 export const timeline: TimelineItem[] = [
   {
+    year: 2022,
+    title: "Portfolio",
+    text: "Wanted to refresh my portfolio a bit again. Added a new light theme and tons of improvements to my older blog posts.",
+    url: "https://caspertheghost.me",
+    date: "January 2022",
+  },
+  {
+    year: 2022,
+    title: "New year!",
+    text: "Happy New year 🎆! I want to to contribute even more to other open-source projects and create amazing web experiences in 2022 and beyond!",
+    date: "January 2022",
+  },
+  {
     year: 2021,
     title: "Remix.run",
     text: "Heard a lot of good things about Remix.run and decided to try it out myself. I really like it, great DX and super fast ⚡!",
