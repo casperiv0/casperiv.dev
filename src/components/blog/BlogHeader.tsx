@@ -1,6 +1,6 @@
 import { useSSRSafeId } from "@react-aria/ssr";
 import format from "date-fns/format";
-import { useViews } from "lib/useViews";
+import { useViews } from "lib/hooks/useViews";
 import { Clock, Eye } from "react-bootstrap-icons";
 import { Post } from "types/Post";
 

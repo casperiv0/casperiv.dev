@@ -18,7 +18,7 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
       <section id="about">
         <h1 className="section-title">About Me</h1>
 
-        <div className="max-w-3xl mt-5 text-gray-200">
+        <div className="max-w-3xl mt-5 text-neutral-800 dark:text-gray-200">
           <p>
             Hello, I am Casper! {"I'm"} a <Age />
             -year-old programmer and student based in Belgium. I adore building accessible,
@@ -27,7 +27,7 @@ export default function About({ timelineData }: { timelineData: TimelineItem[] }
             <a
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white underline"
+              className="text-black dark:text-white underline"
               href="https://github.com/dev-caspertheghost?tab=repositories"
             >
               many open-source projects

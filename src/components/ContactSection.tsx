@@ -68,10 +68,12 @@ export const ContactSection = () => {
         onSubmit={onSubmit}
         initialValues={initialValues}
       >
-        {({ handleSubmit, handleChange, errors, values, touched }) => (
+        {({ handleSubmit, handleChange, isValid, errors, values, touched }) => (
           <Form className="mt-3" onSubmit={handleSubmit}>
             {message && state === "completed" ? (
-              <p className="p-2 px-3 mb-3 rounded-md bg-blue-2">{message}</p>
+              <p className="p-2 px-3 mb-3 rounded-md bg-gray-300/80 shadow-sm dark:bg-blue-2">
+                {message}
+              </p>
             ) : null}
 
             <FormField errorMessage={errors.name} id="name" label="Name">
@@ -111,7 +113,7 @@ export const ContactSection = () => {
               <a className="italic underline" href="mailto:casper.iversen2@gmail.com">
                 Send me an email directly
               </a>
-              <Button disabled={state === "loading"} type="submit">
+              <Button disabled={!isValid || state === "loading"} type="submit">
                 {state === "loading" ? "Submitting..." : "Submit"}
               </Button>
             </div>

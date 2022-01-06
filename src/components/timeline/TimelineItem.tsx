@@ -9,7 +9,7 @@ export const TimelineItem = ({ item }: Props) => {
     <li className="my-5">
       <h5 className="text-lg font-medium">
         {item.tag ? (
-          <span className="mr-2 px-1.5 p-0.5 text-base lowercase rounded-md bg-gradient-to-tr from-[#1150d4] to-[#a245fc]">
+          <span className="mr-2 px-2 p-1 text-base lowercase text-white dark:text-black rounded-md bg-gradient-to-tr from-[#1150d4] to-[#a245fc]">
             {item.tag}
           </span>
         ) : null}
@@ -23,7 +23,7 @@ export const TimelineItem = ({ item }: Props) => {
         )}
       </h5>
 
-      <p className="mt-1 text-base text-gray-300">{item.text}</p>
+      <p className="mt-1 text-base  text-neutral-800 dark:text-gray-300">{item.text}</p>
     </li>
   );
 };

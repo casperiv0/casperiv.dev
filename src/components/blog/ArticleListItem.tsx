@@ -14,7 +14,7 @@ export function ArticleListItem({ isFeatured, article, type }: Props) {
   const extraAProps = isFeatured
     ? {
         style: { borderRadius: 3.5 },
-        className: "z-20 block p-3 bg-blue w-full h-full",
+        className: "z-20 block p-3 bg-gray-50 dark:bg-blue w-full h-full",
       }
     : {};
 
@@ -31,10 +31,12 @@ export function ArticleListItem({ isFeatured, article, type }: Props) {
           <h3 style={{ fontSize: "1.25rem" }} className="font-semibold">
             {article.title}
           </h3>
-          <p className="mt-1 text-gray-100">{article.intro}</p>
+          <p className="mt-1 text-neutral-800 dark:text-gray-100">{article.intro}</p>
 
           {isFeatured ? null : (
-            <span className="block mt-1.5 font-normal text-gray-300">{publishedAt}</span>
+            <span className="block mt-1.5 font-normal text-neutral-700 dark:text-gray-300">
+              {publishedAt}
+            </span>
           )}
         </a>
       </Link>

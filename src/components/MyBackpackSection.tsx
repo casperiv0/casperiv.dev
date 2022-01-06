@@ -3,7 +3,7 @@ export const MyBackpackSection = ({ myBackpack }: { myBackpack: [string, string[
     <section id="skills">
       <h1 className="section-title">My Backpack</h1>
 
-      <p className="my-4 text-gray-300">
+      <p className="my-4 text-neutral-800 dark:text-gray-300">
         You can find the list of my top skills below. {"I'm"} also open to learn more frontend
         related frameworks, libraries, languages, etc!
       </p>

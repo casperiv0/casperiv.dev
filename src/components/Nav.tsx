@@ -2,10 +2,11 @@ import * as React from "react";
 import { useRouter } from "next/router";
 import { Github, Linkedin, List, Twitter, X } from "react-bootstrap-icons";
 import classNames from "clsx";
-import { useViewport } from "lib/useViewport";
-import { useActiveNavItem } from "lib/useActiveNavItem";
+import { useViewport } from "lib/hooks/useViewport";
+import { useActiveNavItem } from "lib/hooks/useActiveNavItem";
 import { IconLink } from "./nav/IconLink";
 import { Link } from "./nav/NavLink";
+import { ThemeSwitcher } from "./nav/ThemeSwitcher";
 
 const links = [
   {
@@ -67,7 +68,7 @@ export function Nav() {
 
   return (
     <header
-      className="sticky top-0 z-50 flex items-center justify-center w-full px-5 h-15 bg-blue"
+      className="sticky top-0 z-50 flex items-center justify-center w-full px-5 h-15 bg-gray-50 dark:bg-blue"
       id="nav"
     >
       <nav className="flex items-center justify-between w-full h-20 max-w-4xl">
@@ -78,14 +79,14 @@ export function Nav() {
           className={classNames(
             "h-full space-x-1 md:items-center",
             menuOpen
-              ? "fixed w-full h-[22rem] top-0 left-0 z-50 flex items-center flex-col bg-blue p-5 shadow-lg"
+              ? "fixed w-full h-[22rem] top-0 left-0 z-50 flex items-center flex-col bg-gray-50 dark:bg-blue p-5 shadow-lg"
               : "hidden md:flex relative",
           )}
         >
           {menuOpen ? null : (
             <div
               style={styles}
-              className="absolute bg-blue-2/70 p-2 px-3 duration-200 rounded-md shadow-sm top-1/2"
+              className="absolute bg-neutral-300 dark:bg-blue-2/70 p-2 px-3 duration-200 rounded-md shadow-sm top-1/2"
             />
           )}
 
@@ -127,6 +128,9 @@ export function Nav() {
             <IconLink aria-label="Twitter profile" href="https://twitter.com/casper124578">
               <Twitter />
             </IconLink>
+          </li>
+          <li>
+            <ThemeSwitcher />
           </li>
         </ul>
 

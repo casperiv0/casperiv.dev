@@ -9,15 +9,6 @@
 .reactMarkdown {
   margin-top: 1rem;
 
-  p,
-  li {
-    @apply text-gray-300;
-  }
-
-  a {
-    @apply underline text-white;
-  }
-
   > pre {
     @apply shadow;
   }
@@ -48,7 +39,7 @@
   code {
     font-family: "CascadiaMono", "Courier New", monospace !important;
     font-size: 16px !important;
-    @apply rounded-md p-1 px-1.5 bg-blue-1/60 font-light text-gray-200;
+    @apply rounded-md p-1 px-1.5 font-light;
 
     &::before,
     &::after {
@@ -62,7 +53,7 @@
   h3,
   h2,
   h1 {
-    @apply relative text-white scroll-mt-[4em];
+    @apply relative scroll-mt-[4em];
 
     a {
       position: absolute;
@@ -73,15 +64,14 @@
     }
   }
 
-  strong,
-  b {
-    @apply text-gray-100;
-  }
-
   summary {
     cursor: pointer;
-    transition: 200ms;
-    margin-bottom: 1em;
-    @apply text-gray-200 text-base;
+    margin-bottom: 0.5em;
+  }
+
+  details[open] {
+    summary {
+      margin-bottom: 1.5em;
+    }
   }
 }

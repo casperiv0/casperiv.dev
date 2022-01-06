@@ -10,9 +10,9 @@ export function Link({
     <NextLink href={props.href!}>
       <a
         {...(props as any)}
-        className={classNames("p-2 px-3 duration-200 transition-colors rounded-md ", {
+        className={classNames("p-2 px-3 duration-200 transition-colors rounded-md", {
           "my-2 block": menuOpen,
-          "bg-blue-1/80 shadow-md font-medium": isActive,
+          "dark:bg-blue-1/80 dark:shadow-md font-medium": isActive,
         })}
       >
         {props.children}

@@ -3,14 +3,14 @@ export const myBackpack: [string, string[]][] = [
     "Frontend",
     [
       "HTML, CSS & SCSS",
-      "styled-components",
       "JavaScript",
       "TypeScript",
       "React & Next.js",
+      "styled-components",
       "TailwindCSS",
       "State Management",
     ],
   ],
   ["Backend", ["Node", "REST APIs", "MongoDB & MySQL", "Prisma"]],
-  ["Other", ["Git & GitHub", "NGINX", "DigitalOcean", "VSCode"]],
+  ["Other", ["Git & GitHub", "NGINX", "DigitalOcean", "VSCode", "Docker"]],
 ];
