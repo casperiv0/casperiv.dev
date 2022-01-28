@@ -22,7 +22,7 @@
     "express-rate-limit": "^6.0.3",
     "formik": "^2.2.9",
     "mdx-bundler": "^8.0.1",
-    "next": "^12.0.7",
+    "next": "^12.0.9",
     "next-sitemap": "^1.6.203",
     "prisma": "^3.7.0",
     "react": "17.0.2",
