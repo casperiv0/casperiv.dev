@@ -19,7 +19,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "clsx": "^1.1.1",
     "date-fns": "^2.28.0",
-    "express-rate-limit": "^6.2.0",
+    "express-rate-limit": "^6.3.0",
     "formik": "^2.2.9",
     "mdx-bundler": "^8.0.1",
     "next": "^12.1.0",
