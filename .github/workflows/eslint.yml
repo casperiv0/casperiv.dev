@@ -12,14 +12,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: npm/action-setup@v2
-        with:
-          version: 7.0.0
       - name: Use Node.js 16.x
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: "npm"
+          cache: npm
 
       - name: Install dependencies
         run: npm install
