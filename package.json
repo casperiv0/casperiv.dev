@@ -54,7 +54,7 @@
     "@types/rss": "^0.0.29",
     "@types/yargs-parser": "^21.0.0",
     "autoprefixer": "^10.4.13",
-    "esbuild": "^0.15.15",
+    "esbuild": "^0.15.16",
     "eslint": "^8.28.0",
     "eslint-config-next": "13.0.4",
     "postcss": "^8.4.19",
