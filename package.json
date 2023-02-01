@@ -21,7 +21,7 @@
     "@react-aria/ssr": "^3.4.1",
     "@sendgrid/mail": "^7.7.0",
     "@tailwindcss/typography": "^0.5.9",
-    "@upstash/redis": "^1.19.1",
+    "@upstash/redis": "^1.19.3",
     "@vercel/analytics": "^0.1.8",
     "cloudinary": "^1.33.0",
     "clsx": "^1.2.1",
