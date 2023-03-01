@@ -51,7 +51,7 @@
     "@casper124578/eslint-config": "^6.0.0",
     "@casper124578/eslint-config-next": "^6.0.0",
     "@casper124578/eslint-config-react": "^6.0.0",
-    "@types/node": "^18.14.1",
+    "@types/node": "^18.14.2",
     "@types/react": "18.0.28",
     "@types/rss": "^0.0.30",
     "autoprefixer": "^10.4.13",
