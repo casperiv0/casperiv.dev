@@ -30,7 +30,7 @@
     "mdx-bundler": "^9.2.1",
     "next": "^13.2.1",
     "next-contentlayer": "^0.3.0",
-    "next-sitemap": "^3.1.53",
+    "next-sitemap": "^3.1.55",
     "next-themes": "^0.2.1",
     "react": "^18.3.0-next-4fcc9184a-20230217",
     "react-bootstrap-icons": "^1.10.2",
