@@ -11,6 +11,7 @@
     "start": "next start",
     "lint": "eslint ./src --ext .tsx,.ts,.jsx,.js",
     "lint:fix": "eslint ./src --fix --ext .tsx,.ts,.jsx,.js",
+    "prettier:check": "prettier --check \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .gitignore",
     "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .gitignore",
     "typecheck": "tsc --noEmit"
   },
