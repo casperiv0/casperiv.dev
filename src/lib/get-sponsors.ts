@@ -6,7 +6,7 @@ import ronin from "ronin";
 import { groupBy } from "lodash-es";
 import { env } from "~/env.mjs";
 
-const GITHUB_TOKEN = env.GITHUB_TOKEN;
+const PERSONAL_GITHUB_TOKEN = env.PERSONAL_GITHUB_TOKEN;
 
 interface Node {
   isActive: boolean;
@@ -24,7 +24,7 @@ interface Node {
 const fetchSponsors = async () => {
   const data = await fetch("https://api.github.com/graphql", {
     headers: {
-      Authorization: `bearer ${GITHUB_TOKEN}`,
+      Authorization: `bearer ${PERSONAL_GITHUB_TOKEN}`,
     },
     method: "POST",
     body: JSON.stringify({
@@ -64,7 +64,7 @@ const fetchSponsors = async () => {
 };
 
 export async function getSponsors() {
-  const sponsors = GITHUB_TOKEN ? await fetchSponsors() : [];
+  const sponsors = PERSONAL_GITHUB_TOKEN ? await fetchSponsors() : [];
   const groupedSponsors = groupBy(sponsors, "tier.monthlyPriceInDollars");
 
   const [githubSponsorsCustomizations] = await ronin<any[]>(

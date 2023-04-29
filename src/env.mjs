@@ -11,7 +11,7 @@ export const env = createEnv({
 
     RONIN_TOKEN: z.string().min(1),
     CACHE_TOKEN: z.string().min(1),
-    GITHUB_TOKEN: z.string().min(1),
+    PERSONAL_GITHUB_TOKEN: z.string().min(1),
 
     NODE_ENV: z.string().min(1),
   },
@@ -25,7 +25,7 @@ export const env = createEnv({
 
     RONIN_TOKEN: process.env.RONIN_TOKEN,
     CACHE_TOKEN: process.env.CACHE_TOKEN,
-    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+    PERSONAL_GITHUB_TOKEN: process.env.PERSONAL_GITHUB_TOKEN,
 
     NODE_ENV: process.env.NODE_ENV,
   },
