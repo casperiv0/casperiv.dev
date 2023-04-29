@@ -1,8 +1,5 @@
 import { withContentlayer } from "next-contentlayer";
-
-if (!process.env.CI) {
-  import("./src/env.mjs");
-}
+import "./src/env.mjs";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -7,7 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-      CI: true
+      MAIL_API_KEY: ${{ secrets.MAIL_API_KEY }}
+      MAIL_VERIFIED_SENDER: ${{ secrets.MAIL_VERIFIED_SENDER }}
+      UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+      UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+      RONIN_TOKEN: ${{ secrets.RONIN_TOKEN }}
+      CACHE_TOKEN: "caspertheghost.me_rate_limit_cache"
+      PERSONAL_GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
