@@ -24,11 +24,14 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
-      - name: Typecheck app
-        run: pnpm run typecheck
-
       - name: Linting check
         run: pnpm run lint
 
       - name: Prettier check
         run: pnpm run prettier
+
+    - name: Build app
+        run: pnpm run build
+
+    - name: Typecheck app
+        run: pnpm run typecheck
