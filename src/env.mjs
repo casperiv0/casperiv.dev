@@ -3,7 +3,7 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    MAIL_API_KEY: z.string().min(1),
+    MAIL_API_KEY: z.string().min(1).startsWith("SG."),
     MAIL_VERIFIED_SENDER: z.string().email(),
 
     UPSTASH_REDIS_REST_URL: z.string().url(),
