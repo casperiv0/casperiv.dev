@@ -28,7 +28,7 @@ jobs:
         run: pnpm run lint
 
       - name: Prettier check
-        run: pnpm run prettier
+        run: pnpm run prettier:check
 
       - name: Build app
         run: pnpm run build
