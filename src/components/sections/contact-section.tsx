@@ -139,7 +139,7 @@ export function ContactSection() {
                   })
                 }
                 errorMessage={errors.lastName?.message}
-                label="First Name"
+                label="Last Name"
               />
             </div>
 
