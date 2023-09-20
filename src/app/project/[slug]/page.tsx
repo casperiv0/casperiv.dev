@@ -7,6 +7,7 @@ import { BlogHeader } from "~/components/blog/blog-header";
 import { Markdown } from "~/components/blog/markdown/markdown";
 import { BlogFooter } from "~/components/blog/blog-footer";
 import ronin from "ronin";
+import { Project } from "@ronin/casper";
 
 export const revalidate = 600; // 10 minutes
 
@@ -43,12 +44,11 @@ export async function generateMetadata({ params }: ProjectSlugPageProps) {
 }
 
 async function getProjectInformationFromRONIN(slug: string) {
-  const [project] = await ronin(
-    ({ get }) =>
-      (get.project = {
-        where: { slug: { is: slug } },
-      }),
-  );
+  const [project] = await ronin<[Project | null]>(({ get }) => {
+    get.project = {
+      where: { slug: { is: slug } },
+    };
+  });
   return project;
 }
 
