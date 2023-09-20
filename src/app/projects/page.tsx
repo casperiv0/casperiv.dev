@@ -4,7 +4,7 @@ import { mergeSeo } from "~/lib/merge-seo";
 import { Link, link } from "~/components/link";
 import { Projects } from "@ronin/casper";
 import Image from "next/image";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight } from "~/components/icons/arrow-right";
 
 export const revalidate = 600; // 10 minutes
 

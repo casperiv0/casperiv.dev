@@ -1,7 +1,8 @@
-"use client";
-
-import { ArrowUpRight, GithubLogo, LinkedinLogo, TwitterLogo } from "@phosphor-icons/react";
 import { ContactForm } from "./contact-form";
+import { GithubLogo } from "~/components/icons/github-logo";
+import { TwitterLogo } from "~/components/icons/twitter-logo";
+import { LinkedinLogo } from "~/components/icons/linkedin-logo";
+import { ArrowUpRight } from "~/components/icons/arrow-right-up";
 
 export const socialLinks = [
   { icon: GithubLogo, name: "GitHub", url: "https://casperiv.dev/github" },

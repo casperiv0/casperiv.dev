@@ -4,7 +4,7 @@ import { Link } from "~/components/link";
 import { allBlogPosts } from "contentlayer/generated";
 import compareDesc from "date-fns/compareDesc";
 import { getArticleSlug } from "~/lib/mdx/get-article-slug";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight } from "../icons/arrow-right";
 
 export function LatestBlogPosts() {
   const latestThreeBlogPosts = allBlogPosts

@@ -1,12 +1,10 @@
-"use client";
-
 import format from "date-fns/format";
 import classNames from "clsx";
 import type { BlogPost, Project, CodeSnippet } from "contentlayer/generated";
 import { getArticleSlug } from "~/lib/mdx/get-article-slug";
 import { Link } from "../link";
 import NextLink from "next/link";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight } from "../icons/arrow-right";
 
 interface Props {
   isFeatured?: boolean;

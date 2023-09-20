@@ -3,9 +3,10 @@
 import * as React from "react";
 import { Projects } from "@ronin/casper";
 import { Link } from "~/components/link";
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 import { Button } from "~/components/button";
 import Image from "next/image";
+import { ArrowRight } from "../icons/arrow-right";
+import { ArrowLeft } from "../icons/arrow-left";
 
 interface ProjectsSectionProps {
   featuredProjects: Projects;
