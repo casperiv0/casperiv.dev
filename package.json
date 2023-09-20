@@ -19,6 +19,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@hookform/resolvers": "^3.2.0",
+    "@phosphor-icons/react": "^2.0.13",
     "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-hover-card": "^1.0.6",
     "@react-aria/label": "^3.6.1",
@@ -50,7 +51,6 @@
     "next-themes": "^0.2.1",
     "pure-react-carousel": "^1.30.1",
     "react": "^18.3.0-next-67a61d5bd-20230228",
-    "react-bootstrap-icons": "^1.10.3",
     "react-children-utilities": "^2.9.0",
     "react-dom": "^18.3.0-next-67a61d5bd-20230228",
     "react-hook-form": "^7.45.4",

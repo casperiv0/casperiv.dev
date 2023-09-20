@@ -5,13 +5,13 @@ import type { BlogPost, Project, CodeSnippet } from "contentlayer/generated";
 import format from "date-fns/format";
 import { useViews } from "~/lib/hooks/use-views";
 import { getArticleSlug } from "~/lib/mdx/get-article-slug";
-import { ArrowUpRight, Clock, Eye } from "react-bootstrap-icons";
 import type { Project as RONINProject } from "@ronin/casper";
 import { Link } from "../link";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import { m } from "framer-motion";
 import { Balancer } from "react-wrap-balancer";
+import { ArrowUpRight, Clock, Eye } from "@phosphor-icons/react";
 
 interface Props extends Partial<RONINProject> {
   post: BlogPost | CodeSnippet | Project;

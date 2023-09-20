@@ -2,9 +2,9 @@ import ronin from "ronin";
 import NextLink from "next/link";
 import { mergeSeo } from "~/lib/merge-seo";
 import { Link, link } from "~/components/link";
-import { ArrowRightShort } from "react-bootstrap-icons";
 import { Projects } from "@ronin/casper";
 import Image from "next/image";
+import { ArrowRight } from "@phosphor-icons/react";
 
 export const revalidate = 600; // 10 minutes
 
@@ -99,7 +99,7 @@ export default async function ProjectsPage() {
                       size: "square",
                     })}
                   >
-                    <ArrowRightShort width={25} height={25} />
+                    <ArrowRight width={20} height={20} />
                   </p>
                 </header>
 
@@ -136,7 +136,7 @@ export default async function ProjectsPage() {
                 intent="secondary"
                 href={projectURL}
               >
-                <ArrowRightShort width={25} height={25} />
+                <ArrowRight width={20} height={20} />
               </Link>
             </li>
           );

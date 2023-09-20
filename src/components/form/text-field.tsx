@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Input } from "./input";
 import { twMerge } from "tailwind-merge";
-import { ExclamationTriangleFill } from "react-bootstrap-icons";
 import { Textarea } from "./textarea";
 import { useTextField } from "@react-aria/textfield";
 import type { AriaTextFieldProps, TextFieldAria } from "@react-aria/textfield";
+import { Warning } from "@phosphor-icons/react";
 
 interface TextFieldProps extends AriaTextFieldProps {
   errorMessage?: string;
@@ -48,7 +48,7 @@ export const TextField = React.forwardRef<HTMLInputElement | HTMLTextAreaElement
             className="text-red-400 font-medium mt-0.5 flex items-center gap-2"
             slot="errorMessage"
           >
-            <ExclamationTriangleFill className="fill-red-400" /> {props.errorMessage}
+            <Warning className="fill-red-400" /> {props.errorMessage}
           </span>
         ) : null}
       </div>

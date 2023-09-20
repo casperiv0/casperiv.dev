@@ -1,7 +1,7 @@
 "use client";
 
+import { X } from "@phosphor-icons/react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X } from "react-bootstrap-icons";
 
 export function Modal(props: Dialog.DialogProps) {
   return (

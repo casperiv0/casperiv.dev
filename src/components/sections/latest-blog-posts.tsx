@@ -1,8 +1,10 @@
+"use client";
+
 import { Link } from "~/components/link";
-import { ArrowRightShort } from "react-bootstrap-icons";
 import { allBlogPosts } from "contentlayer/generated";
 import compareDesc from "date-fns/compareDesc";
 import { getArticleSlug } from "~/lib/mdx/get-article-slug";
+import { ArrowRight } from "@phosphor-icons/react";
 
 export function LatestBlogPosts() {
   const latestThreeBlogPosts = allBlogPosts
@@ -20,7 +22,7 @@ export function LatestBlogPosts() {
 
         <Link className="max-w-fit" intent="secondary" extras="icon" href="/blog">
           Browse all blog posts
-          <ArrowRightShort width={25} height={25} />
+          <ArrowRight className="ml-1.5" width={20} height={20} />
         </Link>
       </header>
 
@@ -49,7 +51,7 @@ export function LatestBlogPosts() {
               intent="secondary"
               href={`/blog/${getArticleSlug(blogPost)}`}
             >
-              <ArrowRightShort width={25} height={25} />
+              <ArrowRight width={20} height={20} />
             </Link>
           </li>
         ))}

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Projects } from "@ronin/casper";
 import { Link } from "~/components/link";
-import { ArrowLeftShort, ArrowRightShort } from "react-bootstrap-icons";
+import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 import { Button } from "~/components/button";
 import Image from "next/image";
 
@@ -49,7 +49,7 @@ export function ProjectsSection(props: ProjectsSectionProps) {
 
         <Link className="max-w-fit" intent="secondary" extras="icon" href="/projects">
           Explore more projects
-          <ArrowRightShort width={25} height={25} />
+          <ArrowRight className="ml-1.5" width={20} height={20} />
         </Link>
       </header>
 
@@ -92,7 +92,7 @@ export function ProjectsSection(props: ProjectsSectionProps) {
                     href={`/project/${project.slug}`}
                   >
                     View full project
-                    <ArrowRightShort width={25} height={25} />
+                    <ArrowRight width={20} height={20} />
                   </Link>
 
                   <div className="flex gap-x-1">
@@ -102,10 +102,10 @@ export function ProjectsSection(props: ProjectsSectionProps) {
                       intent="secondary"
                       size="square"
                     >
-                      <ArrowLeftShort width={25} height={25} />
+                      <ArrowLeft width={20} height={20} />
                     </Button>
                     <Button aria-label="Next Project" onClick={nextSlide} size="square">
-                      <ArrowRightShort width={25} height={25} />
+                      <ArrowRight width={20} height={20} />
                     </Button>
                   </div>
                 </div>

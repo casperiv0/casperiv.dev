@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { ImageProps } from "next/image";
-import { ArrowLeftShort } from "react-bootstrap-icons";
+import { ArrowLeft } from "@phosphor-icons/react";
 import { Link } from "~/components/link";
 
 interface ImageComponentProps {
@@ -17,7 +17,7 @@ export function ImageComponent(props: ImageComponentProps) {
 
         <Link className="max-w-fit" intent="secondary" extras="icon" href="/gallery">
           Gallery
-          <ArrowLeftShort width={25} height={25} />
+          <ArrowLeft className="ml-1.5" width={20} height={20} />
         </Link>
       </header>
 

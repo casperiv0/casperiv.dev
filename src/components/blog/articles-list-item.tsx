@@ -1,10 +1,12 @@
+"use client";
+
 import format from "date-fns/format";
 import classNames from "clsx";
 import type { BlogPost, Project, CodeSnippet } from "contentlayer/generated";
 import { getArticleSlug } from "~/lib/mdx/get-article-slug";
 import { Link } from "../link";
-import { ArrowRightShort } from "react-bootstrap-icons";
 import NextLink from "next/link";
+import { ArrowRight } from "@phosphor-icons/react";
 
 interface Props {
   isFeatured?: boolean;
@@ -33,7 +35,7 @@ export function ArticleListItem({ isFeatured, article, type }: Props) {
           intent="secondary"
           href={`/blog/${getArticleSlug(article)}`}
         >
-          <ArrowRightShort width={25} height={25} />
+          <ArrowRight width={20} height={20} />
         </Link>
       ) : null}
 

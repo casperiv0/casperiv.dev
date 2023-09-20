@@ -1,9 +1,9 @@
 "use client";
 
-import { ArrowRightShort } from "react-bootstrap-icons";
 import { Link } from "~/components/link";
 import { m as motion, useScroll, useSpring, useTransform } from "framer-motion";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { ArrowRight } from "@phosphor-icons/react";
 
 export function HeroSection() {
   const { scrollYProgress } = useScroll();
@@ -43,7 +43,8 @@ export function HeroSection() {
 
           <div className="flex items-center gap-3 mt-7 w-full">
             <Link extras="icon" intent="primary" href="/about">
-              About Me <ArrowRightShort width={25} height={25} />
+              About Me
+              <ArrowRight className="ml-1.5" width={20} height={20} />
             </Link>
             <Link intent="secondary" href="/projects">
               Projects
