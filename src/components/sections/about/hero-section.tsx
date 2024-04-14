@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { formatDistanceToNow } from "date-fns/formatDistanceToNow";
 import { Variants, m } from "framer-motion";
 import classNames from "classnames";
 

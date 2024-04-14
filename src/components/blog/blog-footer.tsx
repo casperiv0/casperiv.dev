@@ -1,7 +1,7 @@
 "use client";
 
 import type { BlogPost, Project, CodeSnippet } from "contentlayer/generated";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { formatDistanceToNow } from "date-fns/formatDistanceToNow";
 import { usePathname } from "next/navigation";
 
 interface Props {

@@ -7,7 +7,7 @@ import { LatestBlogPosts } from "~/components/sections/latest-blog-posts";
 import { ContactSection } from "~/components/sections/contact/contact-section";
 import { allBlogPosts } from "contentlayer/generated";
 import { getArticleSlug } from "~/lib/mdx/get-article-slug";
-import compareDesc from "date-fns/compareDesc";
+import { compareDesc } from "date-fns/compareDesc";
 
 async function fetchHomePageData() {
   const [backpack, featuredProjects] = await ronin<[MySkills, Projects]>(({ get }) => {

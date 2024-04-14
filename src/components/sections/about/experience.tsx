@@ -1,10 +1,10 @@
 "use client";
 
-import { ExperienceItems } from "@ronin/casper";
-import format from "date-fns/format";
+import { ExperienceItem } from "@ronin/casper";
+import { format } from "date-fns/format";
 
 interface ExperienceSectionProps {
-  experienceItems: ExperienceItems;
+  experienceItems: ExperienceItem[];
 }
 
 export function ExperienceSection(props: ExperienceSectionProps) {

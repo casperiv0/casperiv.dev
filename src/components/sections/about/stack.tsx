@@ -1,12 +1,12 @@
 "use client";
 
-import { StackItems } from "@ronin/casper";
+import { StackItem } from "@ronin/casper";
 import Image from "next/image";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import { m as motion } from "framer-motion";
 
 interface StackSectionProps {
-  stackItems: StackItems;
+  stackItems: StackItem[];
 }
 
 export function StackSection(props: StackSectionProps) {
