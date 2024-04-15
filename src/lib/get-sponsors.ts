@@ -2,10 +2,9 @@
  * https://github.com/egoist/website/blob/main/src/lib/get-sponsors.ts
  */
 
-import ronin from "ronin";
+import { get } from "ronin";
 import { groupBy } from "lodash-es";
 import { env } from "~/env.mjs";
-import { GithubSponsorsCustomizations } from "@ronin/casper";
 
 const PERSONAL_GITHUB_TOKEN = env.PERSONAL_GITHUB_TOKEN;
 
@@ -71,9 +70,7 @@ export async function getSponsors() {
   const sponsors = PERSONAL_GITHUB_TOKEN ? await fetchSponsors() : [];
   const groupedSponsors = groupBy(sponsors, "tier.monthlyPriceInDollars");
 
-  const [githubSponsorsCustomizations] = await ronin<[GithubSponsorsCustomizations]>(({ get }) => {
-    get.githubSponsorsCustomizations;
-  });
+  const githubSponsorsCustomizations = await get.githubSponsorsCustomizations();
 
   return {
     githubSponsorsCustomizations,

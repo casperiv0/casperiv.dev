@@ -1,6 +1,5 @@
-import ronin from "ronin";
+import { get } from "ronin";
 import { mergeSeo } from "~/lib/merge-seo";
-import { ExperienceItems, StackItems, TimelineItems } from "@ronin/casper";
 import { HorizontalScroll } from "~/components/sections/about/horizontal-scroll";
 import { Timeline } from "~/components/sections/about/timeline";
 import { StackSection } from "~/components/sections/about/stack";
@@ -10,27 +9,17 @@ import { ExperienceSection } from "~/components/sections/about/experience";
 export const revalidate = 600; // 10 minutes
 
 async function getAboutPageData() {
-  const [timelineItems, stackItems, experienceItems] = await ronin<
-    [TimelineItems, StackItems, ExperienceItems]
-  >(({ get }) => {
-    get.timelineItems = {
-      limitedTo: 1000,
-      orderedBy: { descending: ["year"] },
-    };
-
-    get.stackItems = {
-      limitedTo: 1000,
-      orderedBy: {
-        descending: ["isFullSizeIcon"],
-      },
-    };
-
-    get.experienceItems = {
-      orderedBy: {
-        ascending: ["position"],
-      },
-    };
+  const timelineItems = await get.timelineItems({
+    limitedTo: 1000,
+    orderedBy: { descending: ["year"] },
   });
+
+  const stackItems = await get.stackItems({
+    limitedTo: 1000,
+    orderedBy: { descending: ["isFullSizeIcon"] },
+  });
+
+  const experienceItems = await get.experienceItems.orderedBy.ascending(["position"]);
 
   return {
     stackItems,

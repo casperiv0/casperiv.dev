@@ -1,5 +1,4 @@
-import { GalleryImage, GalleryImages } from "@ronin/casper";
-import ronin from "ronin";
+import { get } from "ronin";
 import { ImageComponent } from "./component";
 import { Metadata } from "next";
 
@@ -10,12 +9,7 @@ interface ImageModalPageProps {
 }
 
 export async function generateMetadata(props: ImageModalPageProps): Promise<Metadata> {
-  const [image] = await ronin<GalleryImage | null>(({ get }) => {
-    get.galleryImage = {
-      where: { id: { is: props.params.id } },
-      limitedTo: 1000,
-    };
-  });
+  const image = await get.galleryImage.where.id.is(props.params.id);
 
   if (!image) {
     return {};
@@ -51,12 +45,7 @@ export async function generateMetadata(props: ImageModalPageProps): Promise<Meta
 }
 
 export default async function ImageModalPage(props: ImageModalPageProps) {
-  const [image] = await ronin<GalleryImage | null>(({ get }) => {
-    get.galleryImage = {
-      where: { id: { is: props.params.id } },
-      limitedTo: 1000,
-    };
-  });
+  const image = await get.galleryImage.where.id.is(props.params.id);
 
   if (!image) {
     return null;
@@ -78,11 +67,7 @@ export default async function ImageModalPage(props: ImageModalPageProps) {
 }
 
 export async function generateStaticParams() {
-  const [data] = await ronin<GalleryImages>(({ get }) => {
-    get.galleryImages = {
-      limitedTo: 1000,
-    };
-  });
+  const data = await get.galleryImages.limitedTo(1000);
 
   return data.map((image) => ({
     id: image.id,

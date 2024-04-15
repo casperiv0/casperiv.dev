@@ -1,19 +1,16 @@
-import ronin from "ronin";
+import { get } from "ronin";
 import NextLink from "next/link";
 import { mergeSeo } from "~/lib/merge-seo";
 import { Link, link } from "~/components/link";
-import { Projects } from "@ronin/casper";
 import Image from "next/image";
 import { ArrowRight } from "~/components/icons/arrow-right";
 
 export const revalidate = 600; // 10 minutes
 
 async function fetchProjects() {
-  const [projects] = await ronin<Projects>(({ get }) => {
-    get.projects = {
-      orderedBy: { ascending: ["featuredPosition"] },
-      limitedTo: 1000,
-    };
+  const projects = await get.projects({
+    orderedBy: { ascending: ["featuredPosition"] },
+    limitedTo: 1000,
   });
 
   return {

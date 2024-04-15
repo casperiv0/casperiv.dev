@@ -1,5 +1,4 @@
-import { GalleryImage, GalleryImages } from "@ronin/casper";
-import ronin from "ronin";
+import { get } from "ronin";
 import { ImageModal } from "~/components/gallery/image-modal";
 
 export const revalidate = 600; // 10 minutes
@@ -9,14 +8,9 @@ interface ImageModalPageProps {
 }
 
 export default async function ImageModalPage({ params }: ImageModalPageProps) {
-  const [image] = await ronin<GalleryImage | null>(({ get }) => {
-    get.galleryImage = {
-      where: { id: { is: params.id } },
-      limitedTo: 1000,
-    };
-  });
+  const image = await get.galleryImage.where.id.is(params.id);
 
-  if (!image) {
+  if (image !== null) {
     return null;
   }
 
@@ -34,11 +28,7 @@ export default async function ImageModalPage({ params }: ImageModalPageProps) {
 }
 
 export async function generateStaticParams() {
-  const [data] = await ronin<GalleryImages>(({ get }) => {
-    get.galleryImages = {
-      limitedTo: 1000,
-    };
-  });
+  const data = await get.galleryImages.limitedTo(1000);
 
   return data.map((image) => ({
     id: image.id,
