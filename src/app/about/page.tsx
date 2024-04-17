@@ -1,4 +1,4 @@
-import { get } from "ronin";
+import { batch, get } from "ronin";
 import { mergeSeo } from "~/lib/merge-seo";
 import { HorizontalScroll } from "~/components/sections/about/horizontal-scroll";
 import { Timeline } from "~/components/sections/about/timeline";
@@ -9,17 +9,17 @@ import { ExperienceSection } from "~/components/sections/about/experience";
 export const revalidate = 600; // 10 minutes
 
 async function getAboutPageData() {
-  const timelineItems = await get.timelineItems({
-    limitedTo: 1000,
-    orderedBy: { descending: ["year"] },
-  });
-
-  const stackItems = await get.stackItems({
-    limitedTo: 1000,
-    orderedBy: { descending: ["isFullSizeIcon"] },
-  });
-
-  const experienceItems = await get.experienceItems.orderedBy.ascending(["position"]);
+  const [timelineItems, stackItems, experienceItems] = await batch(() => [
+    get.timelineItems({
+      limitedTo: 1000,
+      orderedBy: { descending: ["year"] },
+    }),
+    get.stackItems({
+      limitedTo: 1000,
+      orderedBy: { descending: ["isFullSizeIcon"] },
+    }),
+    get.experienceItems.orderedBy.ascending(["position"]),
+  ]);
 
   return {
     stackItems,
