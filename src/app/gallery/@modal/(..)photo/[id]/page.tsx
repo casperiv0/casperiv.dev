@@ -10,7 +10,7 @@ interface ImageModalPageProps {
 export default async function ImageModalPage({ params }: ImageModalPageProps) {
   const image = await get.galleryImage.where.id.is(params.id);
 
-  if (image !== null) {
+  if (!image) {
     return null;
   }
 
