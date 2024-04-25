@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: ProjectSlugPageProps) {
 }
 
 async function getProjectInformationFromRONIN(slug: string) {
-  const project = await get.project.where.slug.is(slug);
+  const project = await get.project.with.slug(slug);
 
   return project;
 }
