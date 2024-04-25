@@ -135,8 +135,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
       ronin:
-        specifier: 2.1.0
-        version: 2.1.0
+        specifier: 2.1.1
+        version: 2.1.1
       rss:
         specifier: ^1.2.2
         version: 1.2.2
@@ -4033,8 +4033,8 @@ packages:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
 
-  ronin@2.1.0:
-    resolution: {integrity: sha512-/FaCB/Lz7Fnv2iBnM66RNNgodL0mWEm4ZQ3yCAqsype3Mu5bAruumll5lFTJVFmJL9g4Xhm7eKPD/0XH02R3/g==}
+  ronin@2.1.1:
+    resolution: {integrity: sha512-AVLbum97bJ2VP1f+aOv7DRMRKIDo6lpluSeyJdM+I/RgLy6ZTwsDQUlozk3UiIOptH+dFwPIHZDNHs3+9JSv3Q==}
     engines: {node: '>=18.17.0'}
 
   rss@1.2.2:
@@ -9368,7 +9368,7 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  ronin@2.1.0: {}
+  ronin@2.1.1: {}
 
   rss@1.2.2:
     dependencies:
