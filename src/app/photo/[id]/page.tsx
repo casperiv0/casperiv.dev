@@ -9,7 +9,7 @@ interface ImageModalPageProps {
 }
 
 export async function generateMetadata(props: ImageModalPageProps): Promise<Metadata> {
-  const image = await get.galleryImage.where.id.is(props.params.id);
+  const image = await get.galleryImage.with.id(props.params.id);
 
   if (!image) {
     return {};
@@ -45,7 +45,7 @@ export async function generateMetadata(props: ImageModalPageProps): Promise<Meta
 }
 
 export default async function ImageModalPage(props: ImageModalPageProps) {
-  const image = await get.galleryImage.where.id.is(props.params.id);
+  const image = await get.galleryImage.with.id(props.params.id);
 
   if (!image) {
     return null;

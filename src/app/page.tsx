@@ -12,8 +12,8 @@ async function fetchHomePageData() {
   const [backpack, featuredProjects] = await batch(() => [
     get.mySkills.orderedBy.ascending(["ronin.createdAt"]),
     get.projects({
+      with: { isFeatured: true },
       orderedBy: { ascending: ["featuredPosition"] },
-      where: { isFeatured: { is: true } },
     }),
   ]);
 
