@@ -36,7 +36,13 @@ export function Gallery({ initialData }: { initialData: GetGalleryImagesQuery })
     initialData: { pages: [initialData], pageParams: [undefined, initialData.moreAfter] },
     queryKey: ["gallery"],
     queryFn: async ({ pageParam }) => {
-      const res = await fetch(`/api/gallery?after=${pageParam}`);
+      const tag = new URLSearchParams(window.location.search).get("tag");
+
+      const searchParams = new URLSearchParams();
+      if (pageParam) searchParams.set("after", pageParam);
+      if (tag) searchParams.set("tag", tag);
+
+      const res = await fetch(`/api/gallery?${searchParams.toString()}`);
       const data = (await res.json()) as GetGalleryImagesQuery;
       return data;
     },
