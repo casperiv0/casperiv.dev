@@ -8,6 +8,7 @@ interface GetGalleryImagesOptions {
 
 export async function getGalleryImagesServer(options: GetGalleryImagesOptions) {
   const data = await get.galleryImages({
+    // eslint-disable-next-line eqeqeq
     after: options.after != null ? options.after : undefined,
     orderedBy: {
       descending: ["ronin.createdAt"],
