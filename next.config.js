@@ -7,7 +7,7 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
-      { hostname: "media.ronin.co", protocol: "https" },
+      { hostname: "storage.ronin.co", protocol: "https" },
       { hostname: "avatars.githubusercontent.com", protocol: "https" },
       { hostname: "raw.githubusercontent.com", protocol: "https" },
     ],
