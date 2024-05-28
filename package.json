@@ -26,7 +26,7 @@
     "@react-aria/ssr": "^3.9.4",
     "@react-aria/textfield": "^3.14.5",
     "@react-email/components": "0.0.18",
-    "@ronin/casper": "0.0.0-3431309115986",
+    "@ronin/casper": "0.0.0-3433555985967",
     "@t3-oss/env-nextjs": "^0.9.2",
     "@tailwindcss/typography": "^0.5.13",
     "@tanstack/react-query": "^5.37.1",
