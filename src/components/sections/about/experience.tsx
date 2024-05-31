@@ -17,7 +17,7 @@ export function ExperienceSection(props: ExperienceSectionProps) {
       <ul className="flex flex-col mt-5">
         {props.experienceItems.map((item) => {
           const startDate = format(new Date(item.startDate), "MMM yyyy");
-          const endDate = (item.endDate as Date | null)
+          const endDate = !isPresentDate(item.endDate as Date | null)
             ? format(new Date(item.endDate), "MMM yyyy")
             : "Present";
 
@@ -44,4 +44,11 @@ export function ExperienceSection(props: ExperienceSectionProps) {
       </ul>
     </section>
   );
+}
+
+function isPresentDate(date: Date | null): boolean {
+  if (!date) return true;
+
+  const isEpochStart = date.getTime() === 0;
+  return isEpochStart;
 }
