@@ -14,14 +14,17 @@ export default async function ImageModalPage({ params }: ImageModalPageProps) {
     return null;
   }
 
+  const baseWidth = image.media.meta.width ?? 800;
+  const baseHeight = image.media.meta.height ?? 1100;
+
   return (
     <ImageModal
       key={image.media.key}
       src={image.media.src}
-      width={image.media.meta.width / 2}
-      height={image.media.meta.height / 2}
+      width={baseWidth / 2}
+      height={baseHeight / 2}
       alt={image.title}
-      blurDataURL={image.media.placeholder.base64 || undefined}
+      blurDataURL={image.media.placeholder?.base64 || undefined}
       id={image.id}
     />
   );

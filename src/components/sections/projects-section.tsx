@@ -72,7 +72,7 @@ export function ProjectsSection(props: ProjectsSectionProps) {
                 className="rounded-2xl shadow-md w-full md:max-w-[50%] md:h-80 object-cover"
                 src={project.coverImage.src}
                 placeholder="blur"
-                blurDataURL={project.coverImage.placeholder.base64}
+                blurDataURL={project.coverImage.placeholder?.base64 ?? undefined}
               />
 
               <div className="flex flex-col w-full text-left">

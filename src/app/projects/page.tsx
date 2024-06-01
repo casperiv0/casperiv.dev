@@ -79,7 +79,7 @@ export default async function ProjectsPage() {
                     className="rounded shadow-md w-full md:h-80 object-cover"
                     src={project.coverImage.src}
                     placeholder="blur"
-                    blurDataURL={project.coverImage.placeholder.base64}
+                    blurDataURL={project.coverImage.placeholder?.base64 ?? undefined}
                   />
                 </figure>
 

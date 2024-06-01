@@ -67,14 +67,17 @@ export function Gallery({ initialData }: { initialData: GetGalleryImagesQuery })
         {columns.map((column, i) => (
           <Column key={`column-${i}`}>
             {column.map((image) => {
+              const baseWidth = image.media.meta.width ?? 800;
+              const baseHeight = image.media.meta.height ?? 1100;
+
               return (
                 <ImageItem
                   key={image.media.key}
                   src={image.media.src}
-                  width={image.media.meta.width / 4}
-                  height={image.media.meta.height / 4}
+                  width={baseWidth / 4}
+                  height={baseHeight / 4}
                   alt={image.title}
-                  blurDataURL={image.media.placeholder.base64 || undefined}
+                  blurDataURL={image.media.placeholder?.base64 || undefined}
                   id={image.id}
                 />
               );

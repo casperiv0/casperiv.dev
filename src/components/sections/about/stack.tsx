@@ -34,7 +34,7 @@ export function StackSection(props: StackSectionProps) {
                   height={64}
                   src={item.logo.src}
                   alt={item.name}
-                  blurDataURL={item.logo.placeholder.base64}
+                  blurDataURL={item.logo.placeholder?.base64 ?? undefined}
                 />
               </HoverCard.Trigger>
               <HoverCard.Content

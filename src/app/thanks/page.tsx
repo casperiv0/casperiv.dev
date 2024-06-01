@@ -82,7 +82,7 @@ export default async function App() {
               const bio = customization?.bio || sponsor.bio;
               const url = customization?.url || `https://github.com/${sponsor.login}`;
               const avatarUrl = customization?.avatar?.src || sponsor.avatarUrl;
-              const placeholder = customization?.avatar?.placeholder.base64 || undefined;
+              const placeholder = customization?.avatar?.placeholder?.base64 || undefined;
 
               const isNextActive = tier.sponsors[idx + 1]?.isActive;
               const isPreviousActive = tier.sponsors[idx - 1]?.isActive;
